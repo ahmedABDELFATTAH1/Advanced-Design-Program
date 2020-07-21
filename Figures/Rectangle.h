@@ -13,7 +13,7 @@ protected:
     float width,high;
 
 public:
-    Rectangle(color_comp col,point p1,point p2);
+    Rectangle(color_comp col,point p1,point p2,bool Filled);
     virtual void setDimentions();
     sf::RectangleShape& getUI();
     virtual void printDimentions();

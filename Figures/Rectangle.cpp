@@ -6,7 +6,7 @@
 
 #include "Rectangle.h"
 Rectangle::
-Rectangle(color_comp col,point p1,point p2):Figure{col,p1,p2}{
+Rectangle(color_comp col,point p1,point p2,bool Filled):Figure{col,p1,p2,Filled}{
     rectangleShape= nullptr;
     setUI();
 };

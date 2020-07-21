@@ -12,10 +12,11 @@ protected:
 color_comp color;
 point p1;
 point p2;
+bool isFilled;
 public:
     static int numFigures;
     bool needUpdate;
-    Figure(color_comp col,point p1,point p2);
+    Figure(color_comp col,point p1,point p2,bool Filled);
     virtual sf::Shape& getUI()=0;
     virtual void setUI()=0;
     virtual void printDimentions()=0;

@@ -6,38 +6,72 @@
 #include<iostream>
 #define SCREEN_WIDTH 1300
 #define SCREEN_HIGH 600
+#include<cmath>
 int Figure::numFigures=0;
-
-
+color_comp GlobalColor;
 void uploadAssets(std::vector<Figure*>& assets)
 {
-    int postionX=3;
-    int postionY=3;
-    const int width=30;
+    int postionX=0;
+    int postionY=0;
+    constexpr int width=5;
     const int high=30;
-    for(int i=0;i<5;i++)
+    constexpr float intervals=SCREEN_WIDTH/(float(width)*4);
+    float added=ceil(256/intervals);
+    while(postionX<SCREEN_WIDTH)
     {
-        for(int j=0;j<4;j++)
-        {
-            assets.emplace_back(new Rectangle({122,0,0},{postionX,postionY},{postionX+width,postionY+high}));
-            postionX+=width+3;
-        }
-        postionX=3;
-        postionY=postionY+33;
+        assets.emplace_back(new Rectangle(GlobalColor,{postionX,postionY},{postionX+width,postionY+high}, true));
+        postionX+=width;
+        GlobalColor.r+=added;
+        if(GlobalColor.r>=254)
+            break;
+    }
+    postionX=0;
+    postionY=30;
+    GlobalColor={0,0,0};
+    while(postionX<SCREEN_WIDTH)
+    {
+        assets.emplace_back(new Rectangle(GlobalColor,{postionX,postionY},{postionX+width,postionY+high}, true));
+        postionX+=width;
+        GlobalColor.g+=added;
+        if(GlobalColor.g>=254)
+            break;
+    }
+    postionX=0;
+    postionY=60;
+    GlobalColor={0,0,0};
+    while(postionX<SCREEN_WIDTH)
+    {
+        assets.emplace_back(new Rectangle(GlobalColor,{postionX,postionY},{postionX+width,postionY+high}, true));
+        postionX+=width;
+        GlobalColor.b+=added;
+        if(GlobalColor.b>=254)
+            break;
     }
 }
+
 int main()
 {
-
+    GlobalColor={0,0,0};
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HIGH), "Paint For Kids");
     std::vector<Figure*> shapes;
     std::vector<Figure*> assets;
-    uploadAssets(assets);
+  // uploadAssets(assets);
+   sf::Texture texture;
+   if(!texture.loadFromFile("assets/grid.png"))
+    {
+        std::cout<<"Load Failed"<<std::endl;
+        system("pause");
+    }
+
+   sf::Sprite sprite;
+   sprite.setTexture(texture);
+   float scaleFactorx=SCREEN_WIDTH/texture.getSize().x;
+   float scaleFactory=SCREEN_WIDTH/texture.getSize().y;
+   sprite.scale(scaleFactorx,scaleFactory);
     bool makeShape= false;
     Figure* figure= nullptr;
     while (window.isOpen())
     {
-
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -56,7 +90,7 @@ int main()
                 }
                 p2=position;
                 delete figure;
-                figure=new Circle({0,0,0},p1,p2);
+                figure=new Circle({0,0,0},p1,p2, false);
                 figure->printDimentions();
                 makeShape= true;
             }
@@ -74,7 +108,7 @@ int main()
         }
 
         window.clear({255,255,255});
-
+        window.draw(sprite);
         if(figure)
         {
             window.draw(figure->getUI());
@@ -88,7 +122,6 @@ int main()
         {
             window.draw(shape->getUI());
         }
-
 
         window.display();
     }

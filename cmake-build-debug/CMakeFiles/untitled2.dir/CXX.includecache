@@ -45,4 +45,6 @@ Figures/Line.h
 /home/ahmed/CLionProjects/untitled2/Figures/Line.h
 iostream
 -
+cmath
+-
 

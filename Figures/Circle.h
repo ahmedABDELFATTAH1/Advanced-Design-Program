@@ -12,7 +12,7 @@ private:
     point center;
     sf::CircleShape* circleShape;
 public:
-    Circle(color_comp col, point p1,point p2);
+    Circle(color_comp col, point p1,point p2,bool Filled);
     sf::CircleShape& getUI();
     void setUI();
     void setDimentions();

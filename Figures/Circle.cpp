@@ -4,7 +4,7 @@
 
 #include <cmath>
 #include "Circle.h"
-Circle::Circle(color_comp col, point p1,point p2):Figure{col,p1,p2}{
+Circle::Circle(color_comp col, point p1,point p2,bool Filled):Figure{col,p1,p2,Filled}{
     circleShape= nullptr;
     setDimentions();
     setUI();
@@ -21,7 +21,14 @@ void Circle::setUI() {
     circleShape=new sf::CircleShape(radius);
     sf::Color shapeColor({color.r,color.g,color.b});
     circleShape->setPointCount (100);
-    circleShape->setFillColor(shapeColor);
+    if(isFilled)
+    {
+        circleShape->setFillColor(shapeColor);
+    } else{
+        circleShape->setOutlineThickness(3);
+        circleShape->setOutlineColor(shapeColor);
+    }
+
     circleShape->setPosition(p1.x,p1.y);
 
 }

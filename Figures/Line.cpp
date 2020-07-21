@@ -6,7 +6,7 @@
 #include "Line.h"
 
 
-Line::Line(color_comp col,point p1,point p2):Rectangle{col,p1,p2}{
+Line::Line(color_comp col,point p1,point p2,bool Filled):Rectangle{col,p1,p2,Filled}{
     rectangleShape= nullptr;
     setUI();
 }
