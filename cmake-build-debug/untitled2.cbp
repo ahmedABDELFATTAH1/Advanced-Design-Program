@@ -86,6 +86,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Actions.cpp">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Actions.h">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Colors/Colors.h">
+			<Option target="untitled2"/>
+		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Circle.cpp">
 			<Option target="untitled2"/>
 		</Unit>
@@ -104,13 +116,25 @@
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Line.h">
 			<Option target="untitled2"/>
 		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h">
+			<Option target="untitled2"/>
+		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Rectangle.cpp">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Rectangle.h">
 			<Option target="untitled2"/>
 		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/common.h">
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/GUI.cpp">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/GUI.h">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/common.h">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/main.cpp">

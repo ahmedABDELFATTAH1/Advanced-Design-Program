@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/main.cpp.o -c /home/ahmed/CLionProjects/untitled2/main.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/main.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Figure.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Figure.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Figure.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Circle.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Circle.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Circle.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Rectangle.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Rectangle.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Line.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Line.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Line.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Colors/Colors.cpp.o -c /home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Actions.cpp.o -c /home/ahmed/CLionProjects/untitled2/Actions.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Actions.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/GUI.cpp.o -c /home/ahmed/CLionProjects/untitled2/GUI.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/GUI.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Properties.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Properties.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Properties.cpp"
+}
+]

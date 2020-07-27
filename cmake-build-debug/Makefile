@@ -123,6 +123,60 @@ untitled2/fast:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/build
 .PHONY : untitled2/fast
 
+Actions.o: Actions.cpp.o
+
+.PHONY : Actions.o
+
+# target to build an object file
+Actions.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.o
+.PHONY : Actions.cpp.o
+
+Actions.i: Actions.cpp.i
+
+.PHONY : Actions.i
+
+# target to preprocess a source file
+Actions.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.i
+.PHONY : Actions.cpp.i
+
+Actions.s: Actions.cpp.s
+
+.PHONY : Actions.s
+
+# target to generate assembly for a file
+Actions.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.s
+.PHONY : Actions.cpp.s
+
+Colors/Colors.o: Colors/Colors.cpp.o
+
+.PHONY : Colors/Colors.o
+
+# target to build an object file
+Colors/Colors.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Colors/Colors.cpp.o
+.PHONY : Colors/Colors.cpp.o
+
+Colors/Colors.i: Colors/Colors.cpp.i
+
+.PHONY : Colors/Colors.i
+
+# target to preprocess a source file
+Colors/Colors.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Colors/Colors.cpp.i
+.PHONY : Colors/Colors.cpp.i
+
+Colors/Colors.s: Colors/Colors.cpp.s
+
+.PHONY : Colors/Colors.s
+
+# target to generate assembly for a file
+Colors/Colors.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Colors/Colors.cpp.s
+.PHONY : Colors/Colors.cpp.s
+
 Figures/Circle.o: Figures/Circle.cpp.o
 
 .PHONY : Figures/Circle.o
@@ -204,6 +258,33 @@ Figures/Line.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Line.cpp.s
 .PHONY : Figures/Line.cpp.s
 
+Figures/PlaceHolder.o: Figures/PlaceHolder.cpp.o
+
+.PHONY : Figures/PlaceHolder.o
+
+# target to build an object file
+Figures/PlaceHolder.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o
+.PHONY : Figures/PlaceHolder.cpp.o
+
+Figures/PlaceHolder.i: Figures/PlaceHolder.cpp.i
+
+.PHONY : Figures/PlaceHolder.i
+
+# target to preprocess a source file
+Figures/PlaceHolder.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i
+.PHONY : Figures/PlaceHolder.cpp.i
+
+Figures/PlaceHolder.s: Figures/PlaceHolder.cpp.s
+
+.PHONY : Figures/PlaceHolder.s
+
+# target to generate assembly for a file
+Figures/PlaceHolder.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s
+.PHONY : Figures/PlaceHolder.cpp.s
+
 Figures/Rectangle.o: Figures/Rectangle.cpp.o
 
 .PHONY : Figures/Rectangle.o
@@ -230,6 +311,33 @@ Figures/Rectangle.s: Figures/Rectangle.cpp.s
 Figures/Rectangle.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.s
 .PHONY : Figures/Rectangle.cpp.s
+
+GUI.o: GUI.cpp.o
+
+.PHONY : GUI.o
+
+# target to build an object file
+GUI.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/GUI.cpp.o
+.PHONY : GUI.cpp.o
+
+GUI.i: GUI.cpp.i
+
+.PHONY : GUI.i
+
+# target to preprocess a source file
+GUI.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/GUI.cpp.i
+.PHONY : GUI.cpp.i
+
+GUI.s: GUI.cpp.s
+
+.PHONY : GUI.s
+
+# target to generate assembly for a file
+GUI.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/GUI.cpp.s
+.PHONY : GUI.cpp.s
 
 main.o: main.cpp.o
 
@@ -267,6 +375,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... untitled2"
+	@echo "... Actions.o"
+	@echo "... Actions.i"
+	@echo "... Actions.s"
+	@echo "... Colors/Colors.o"
+	@echo "... Colors/Colors.i"
+	@echo "... Colors/Colors.s"
 	@echo "... Figures/Circle.o"
 	@echo "... Figures/Circle.i"
 	@echo "... Figures/Circle.s"
@@ -276,9 +390,15 @@ help:
 	@echo "... Figures/Line.o"
 	@echo "... Figures/Line.i"
 	@echo "... Figures/Line.s"
+	@echo "... Figures/PlaceHolder.o"
+	@echo "... Figures/PlaceHolder.i"
+	@echo "... Figures/PlaceHolder.s"
 	@echo "... Figures/Rectangle.o"
 	@echo "... Figures/Rectangle.i"
 	@echo "... Figures/Rectangle.s"
+	@echo "... GUI.o"
+	@echo "... GUI.i"
+	@echo "... GUI.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

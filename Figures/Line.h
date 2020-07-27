@@ -13,7 +13,7 @@ float diameter;
 constexpr static const float thickness=5;
 void setDimentions();
 public:
-Line(color_comp col,point p1,point p2,bool Filled);
+Line(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture);
 void printDimentions();
 void setUI();
 

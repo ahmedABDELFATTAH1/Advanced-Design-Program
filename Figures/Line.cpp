@@ -6,7 +6,7 @@
 #include "Line.h"
 
 
-Line::Line(color_comp col,point p1,point p2,bool Filled):Rectangle{col,p1,p2,Filled}{
+Line::Line(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture):Rectangle{col,p1,p2,Filled,texture}{
     rectangleShape= nullptr;
     setUI();
 }

@@ -5,7 +5,7 @@
 #ifndef UNTITLED2_RECTANGLE_H
 #define UNTITLED2_RECTANGLE_H
 
-#include "common.h"
+#include "../common.h"
 #include "Figure.h"
 class Rectangle : public Figure{
 protected:
@@ -13,11 +13,12 @@ protected:
     float width,high;
 
 public:
-    Rectangle(color_comp col,point p1,point p2,bool Filled);
+    Rectangle(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture);
     virtual void setDimentions();
     sf::RectangleShape& getUI();
     virtual void printDimentions();
     virtual void setUI();
+    virtual bool isSelected(int x,int y);
 
 };
 

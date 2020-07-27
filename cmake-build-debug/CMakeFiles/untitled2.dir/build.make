@@ -122,13 +122,69 @@ CMakeFiles/untitled2.dir/Figures/Line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Figures/Line.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Figures/Line.cpp -o CMakeFiles/untitled2.dir/Figures/Line.cpp.s
 
+CMakeFiles/untitled2.dir/Colors/Colors.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Colors/Colors.cpp.o: ../Colors/Colors.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled2.dir/Colors/Colors.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Colors/Colors.cpp.o -c /home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp
+
+CMakeFiles/untitled2.dir/Colors/Colors.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Colors/Colors.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp > CMakeFiles/untitled2.dir/Colors/Colors.cpp.i
+
+CMakeFiles/untitled2.dir/Colors/Colors.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Colors/Colors.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp -o CMakeFiles/untitled2.dir/Colors/Colors.cpp.s
+
+CMakeFiles/untitled2.dir/Actions.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Actions.cpp.o: ../Actions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled2.dir/Actions.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Actions.cpp.o -c /home/ahmed/CLionProjects/untitled2/Actions.cpp
+
+CMakeFiles/untitled2.dir/Actions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Actions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Actions.cpp > CMakeFiles/untitled2.dir/Actions.cpp.i
+
+CMakeFiles/untitled2.dir/Actions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Actions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Actions.cpp -o CMakeFiles/untitled2.dir/Actions.cpp.s
+
+CMakeFiles/untitled2.dir/GUI.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/GUI.cpp.o: ../GUI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled2.dir/GUI.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/GUI.cpp.o -c /home/ahmed/CLionProjects/untitled2/GUI.cpp
+
+CMakeFiles/untitled2.dir/GUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/GUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/GUI.cpp > CMakeFiles/untitled2.dir/GUI.cpp.i
+
+CMakeFiles/untitled2.dir/GUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/GUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/GUI.cpp -o CMakeFiles/untitled2.dir/GUI.cpp.s
+
+CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o: ../Figures/PlaceHolder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp
+
+CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp > CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i
+
+CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp -o CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s
+
 # Object files for target untitled2
 untitled2_OBJECTS = \
 "CMakeFiles/untitled2.dir/main.cpp.o" \
 "CMakeFiles/untitled2.dir/Figures/Figure.cpp.o" \
 "CMakeFiles/untitled2.dir/Figures/Circle.cpp.o" \
 "CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o" \
-"CMakeFiles/untitled2.dir/Figures/Line.cpp.o"
+"CMakeFiles/untitled2.dir/Figures/Line.cpp.o" \
+"CMakeFiles/untitled2.dir/Colors/Colors.cpp.o" \
+"CMakeFiles/untitled2.dir/Actions.cpp.o" \
+"CMakeFiles/untitled2.dir/GUI.cpp.o" \
+"CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o"
 
 # External object files for target untitled2
 untitled2_EXTERNAL_OBJECTS =
@@ -138,9 +194,13 @@ untitled2: CMakeFiles/untitled2.dir/Figures/Figure.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/Circle.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/Line.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Colors/Colors.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Actions.cpp.o
+untitled2: CMakeFiles/untitled2.dir/GUI.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o
 untitled2: CMakeFiles/untitled2.dir/build.make
 untitled2: CMakeFiles/untitled2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable untitled2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable untitled2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

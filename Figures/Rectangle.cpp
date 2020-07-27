@@ -6,7 +6,7 @@
 
 #include "Rectangle.h"
 Rectangle::
-Rectangle(color_comp col,point p1,point p2,bool Filled):Figure{col,p1,p2,Filled}{
+Rectangle(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture):Figure{col,p1,p2,Filled,texture}{
     rectangleShape= nullptr;
     setUI();
 };
@@ -20,9 +20,15 @@ void Rectangle::setUI() {
     setDimentions();
     delete rectangleShape;
     rectangleShape=new sf::RectangleShape();
+    if(shapeTexture)
+    {
+        Figure::setTexure(rectangleShape);
+    }
+    else{
+        sf::Color shapeColor({color.r,color.g,color.b});
+        rectangleShape->setFillColor(shapeColor);
+    }
     rectangleShape->setSize({width,high});
-    sf::Color shapeColor({color.r,color.g,color.b});
-    rectangleShape->setFillColor(shapeColor);
     rectangleShape->setPosition(p1.x,p1.y);
 }
 
@@ -37,4 +43,13 @@ void Rectangle::printDimentions() {
     std::cout<<"p2 value is ("<<p2.x<<","<<p2.y<<")"<<std::endl;
     std::cout<<"width value is "<<width<<std::endl;
     std::cout<<"high value is "<<high<<std::endl;
+}
+
+bool Rectangle::isSelected(int cursorX,int cursorY) {
+   if(cursorX>p1.x&&cursorX<p2.x&&cursorY)
+   {
+
+
+   }
+
 }

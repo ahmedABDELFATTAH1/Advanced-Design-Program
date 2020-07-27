@@ -4,7 +4,7 @@
 
 #include <cmath>
 #include "Circle.h"
-Circle::Circle(color_comp col, point p1,point p2,bool Filled):Figure{col,p1,p2,Filled}{
+Circle::Circle(color_comp col, point p1,point p2,bool Filled,sf::Texture* texture):Figure{col,p1,p2,Filled,texture}{
     circleShape= nullptr;
     setDimentions();
     setUI();

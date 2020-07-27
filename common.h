@@ -7,6 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include<algorithm>
 #include<iostream>
+#include<vector>
 class point{
 public:
     int x,y;
