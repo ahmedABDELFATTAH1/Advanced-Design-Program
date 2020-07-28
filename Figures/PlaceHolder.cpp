@@ -4,7 +4,7 @@
 
 #include "PlaceHolder.h"
 
-PlaceHolder::PlaceHolder(sf::Font& f,point p1,point p2,sf::Texture* tex,color_comp col): text_font(&f),p1(p1),p2(p2),
+PlaceHolder::PlaceHolder(sf::Font* f,point p1,point p2,sf::Texture* tex,color_comp col): text_font(f),p1(p1),p2(p2),
 texure(tex),color(col)
 {
     figure=new Rectangle(col,p1,p2, true, nullptr);

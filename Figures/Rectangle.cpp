@@ -7,7 +7,7 @@
 #include "Rectangle.h"
 Rectangle::
 Rectangle(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture):Figure{col,p1,p2,Filled,texture}{
-    rectangleShape= nullptr;
+    rectangleShape= new sf::RectangleShape();
     setUI();
 };
 
@@ -18,8 +18,6 @@ sf::RectangleShape& Rectangle::getUI()
 
 void Rectangle::setUI() {
     setDimentions();
-    delete rectangleShape;
-    rectangleShape=new sf::RectangleShape();
     if(shapeTexture)
     {
         Figure::setTexure(rectangleShape);
@@ -46,10 +44,6 @@ void Rectangle::printDimentions() {
 }
 
 bool Rectangle::isSelected(int cursorX,int cursorY) {
-   if(cursorX>p1.x&&cursorX<p2.x&&cursorY)
-   {
 
-
-   }
 
 }

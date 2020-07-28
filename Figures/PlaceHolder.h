@@ -18,7 +18,7 @@ private:
     color_comp color;
     std::vector<sf::Text> labels;
 public:
-PlaceHolder(sf::Font&,point p1,point p2,sf::Texture* tex,color_comp col);
+PlaceHolder(sf::Font*,point p1,point p2,sf::Texture* tex,color_comp col);
 void changeFigure();
 void buildUI();
 void drawUI(sf::RenderWindow& window);

@@ -6,6 +6,13 @@ CMakeFiles/untitled2.dir/Actions.cpp.o: ../Actions.h
 CMakeFiles/untitled2.dir/Actions.cpp.o: ../Figures/Figure.h
 CMakeFiles/untitled2.dir/Actions.cpp.o: ../common.h
 
+CMakeFiles/untitled2.dir/Button.cpp.o: ../Button.cpp
+CMakeFiles/untitled2.dir/Button.cpp.o: ../Button.h
+CMakeFiles/untitled2.dir/Button.cpp.o: ../Figures/Figure.h
+CMakeFiles/untitled2.dir/Button.cpp.o: ../Figures/Rectangle.h
+CMakeFiles/untitled2.dir/Button.cpp.o: ../Figures/Text.h
+CMakeFiles/untitled2.dir/Button.cpp.o: ../common.h
+
 CMakeFiles/untitled2.dir/Colors/Colors.cpp.o: ../Colors/Colors.cpp
 CMakeFiles/untitled2.dir/Colors/Colors.cpp.o: ../Colors/Colors.h
 CMakeFiles/untitled2.dir/Colors/Colors.cpp.o: ../Figures/Figure.h
@@ -38,18 +45,26 @@ CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o: ../Figures/Rectangle.cpp
 CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o: ../Figures/Rectangle.h
 CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o: ../common.h
 
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../Figures/Text.cpp
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../Figures/Text.h
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../common.h
+
+CMakeFiles/untitled2.dir/GUI.cpp.o: ../Button.h
 CMakeFiles/untitled2.dir/GUI.cpp.o: ../Figures/Figure.h
 CMakeFiles/untitled2.dir/GUI.cpp.o: ../Figures/PlaceHolder.h
 CMakeFiles/untitled2.dir/GUI.cpp.o: ../Figures/Rectangle.h
+CMakeFiles/untitled2.dir/GUI.cpp.o: ../Figures/Text.h
 CMakeFiles/untitled2.dir/GUI.cpp.o: ../GUI.cpp
 CMakeFiles/untitled2.dir/GUI.cpp.o: ../GUI.h
 CMakeFiles/untitled2.dir/GUI.cpp.o: ../common.h
 
+CMakeFiles/untitled2.dir/main.cpp.o: ../Button.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Circle.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Figure.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Line.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/PlaceHolder.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Rectangle.h
+CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Text.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../GUI.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../common.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../main.cpp

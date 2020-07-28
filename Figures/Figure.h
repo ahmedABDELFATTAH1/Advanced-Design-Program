@@ -12,7 +12,7 @@ protected:
     point p2;
     bool isFilled;
     sf::Texture* shapeTexture;
-    bool needUpdate;
+    bool isSelected;
 public:
     static int numFigures;
     Figure(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture);
@@ -21,7 +21,7 @@ public:
     virtual void printDimentions()=0;
     virtual void setDimentions()=0;
     void setTexure(sf::Shape* shape);
-    ~Figure();
+    virtual ~Figure();
 
 };
 

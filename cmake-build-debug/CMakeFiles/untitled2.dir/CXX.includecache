@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/ahmed/CLionProjects/untitled2/Button.cpp
+Button.h
+/home/ahmed/CLionProjects/untitled2/Button.h
+
+/home/ahmed/CLionProjects/untitled2/Button.h
+common.h
+/home/ahmed/CLionProjects/untitled2/common.h
+Figures/Rectangle.h
+/home/ahmed/CLionProjects/untitled2/Figures/Rectangle.h
+Figures/Text.h
+/home/ahmed/CLionProjects/untitled2/Figures/Text.h
+
 /home/ahmed/CLionProjects/untitled2/Figures/Circle.h
 Figure.h
 /home/ahmed/CLionProjects/untitled2/Figures/Figure.h
@@ -38,6 +50,10 @@ vector
 Figure.h
 /home/ahmed/CLionProjects/untitled2/Figures/Figure.h
 
+/home/ahmed/CLionProjects/untitled2/Figures/Text.h
+../common.h
+/home/ahmed/CLionProjects/untitled2/common.h
+
 /home/ahmed/CLionProjects/untitled2/GUI.cpp
 GUI.h
 /home/ahmed/CLionProjects/untitled2/GUI.h
@@ -49,6 +65,8 @@ common.h
 /home/ahmed/CLionProjects/untitled2/common.h
 Figures/PlaceHolder.h
 /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h
+Button.h
+/home/ahmed/CLionProjects/untitled2/Button.h
 
 /home/ahmed/CLionProjects/untitled2/common.h
 SFML/Graphics.hpp

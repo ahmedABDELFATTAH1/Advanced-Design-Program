@@ -7,7 +7,6 @@ Figure::Figure(color_comp col,point p1,point p2,bool Filled,sf::Texture* texture
 this->color=col;
 this->p1=p1;
 this->p2=p2;
-this->needUpdate= true;
 isFilled=Filled;
 if(texture!= nullptr)
     shapeTexture=texture;

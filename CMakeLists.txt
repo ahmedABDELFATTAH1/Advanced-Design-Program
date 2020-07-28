@@ -20,5 +20,5 @@ if(SFML_FOUND)
     message(STATUS "SFML_VERSION: ${SFML_VERSION}")
 endif()
 
-add_executable(untitled2 main.cpp Figures/Figure.cpp Figures/Figure.h Figures/Circle.cpp Figures/Circle.h common.h Figures/Rectangle.cpp Figures/Rectangle.h Figures/Line.cpp Figures/Line.h Colors/Colors.cpp Colors/Colors.h Actions.cpp Actions.h GUI.cpp GUI.h Figures/PlaceHolder.cpp Figures/PlaceHolder.h)
+add_executable(untitled2 main.cpp Figures/Figure.cpp Figures/Figure.h Figures/Circle.cpp Figures/Circle.h common.h Figures/Rectangle.cpp Figures/Rectangle.h Figures/Line.cpp Figures/Line.h Colors/Colors.cpp Colors/Colors.h Actions.cpp Actions.h GUI.cpp GUI.h Figures/PlaceHolder.cpp Figures/PlaceHolder.h Figures/Text.cpp Figures/Text.h Button.cpp Button.h)
 target_link_libraries (untitled2 sfml-graphics sfml-window sfml-system)

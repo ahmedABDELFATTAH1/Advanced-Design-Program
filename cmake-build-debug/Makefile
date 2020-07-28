@@ -150,6 +150,33 @@ Actions.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.s
 .PHONY : Actions.cpp.s
 
+Button.o: Button.cpp.o
+
+.PHONY : Button.o
+
+# target to build an object file
+Button.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.o
+.PHONY : Button.cpp.o
+
+Button.i: Button.cpp.i
+
+.PHONY : Button.i
+
+# target to preprocess a source file
+Button.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.i
+.PHONY : Button.cpp.i
+
+Button.s: Button.cpp.s
+
+.PHONY : Button.s
+
+# target to generate assembly for a file
+Button.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.s
+.PHONY : Button.cpp.s
+
 Colors/Colors.o: Colors/Colors.cpp.o
 
 .PHONY : Colors/Colors.o
@@ -312,6 +339,33 @@ Figures/Rectangle.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.s
 .PHONY : Figures/Rectangle.cpp.s
 
+Figures/Text.o: Figures/Text.cpp.o
+
+.PHONY : Figures/Text.o
+
+# target to build an object file
+Figures/Text.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Text.cpp.o
+.PHONY : Figures/Text.cpp.o
+
+Figures/Text.i: Figures/Text.cpp.i
+
+.PHONY : Figures/Text.i
+
+# target to preprocess a source file
+Figures/Text.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Text.cpp.i
+.PHONY : Figures/Text.cpp.i
+
+Figures/Text.s: Figures/Text.cpp.s
+
+.PHONY : Figures/Text.s
+
+# target to generate assembly for a file
+Figures/Text.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Text.cpp.s
+.PHONY : Figures/Text.cpp.s
+
 GUI.o: GUI.cpp.o
 
 .PHONY : GUI.o
@@ -378,6 +432,9 @@ help:
 	@echo "... Actions.o"
 	@echo "... Actions.i"
 	@echo "... Actions.s"
+	@echo "... Button.o"
+	@echo "... Button.i"
+	@echo "... Button.s"
 	@echo "... Colors/Colors.o"
 	@echo "... Colors/Colors.i"
 	@echo "... Colors/Colors.s"
@@ -396,6 +453,9 @@ help:
 	@echo "... Figures/Rectangle.o"
 	@echo "... Figures/Rectangle.i"
 	@echo "... Figures/Rectangle.s"
+	@echo "... Figures/Text.o"
+	@echo "... Figures/Text.i"
+	@echo "... Figures/Text.s"
 	@echo "... GUI.o"
 	@echo "... GUI.i"
 	@echo "... GUI.s"

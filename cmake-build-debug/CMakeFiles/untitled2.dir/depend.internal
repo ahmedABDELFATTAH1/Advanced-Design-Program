@@ -6,6 +6,13 @@ CMakeFiles/untitled2.dir/Actions.cpp.o
  /home/ahmed/CLionProjects/untitled2/Actions.h
  /home/ahmed/CLionProjects/untitled2/Figures/Figure.h
  /home/ahmed/CLionProjects/untitled2/common.h
+CMakeFiles/untitled2.dir/Button.cpp.o
+ /home/ahmed/CLionProjects/untitled2/Button.cpp
+ /home/ahmed/CLionProjects/untitled2/Button.h
+ /home/ahmed/CLionProjects/untitled2/Figures/Figure.h
+ /home/ahmed/CLionProjects/untitled2/Figures/Rectangle.h
+ /home/ahmed/CLionProjects/untitled2/Figures/Text.h
+ /home/ahmed/CLionProjects/untitled2/common.h
 CMakeFiles/untitled2.dir/Colors/Colors.cpp.o
  /home/ahmed/CLionProjects/untitled2/Colors/Colors.cpp
  /home/ahmed/CLionProjects/untitled2/Colors/Colors.h
@@ -38,19 +45,27 @@ CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o
  /home/ahmed/CLionProjects/untitled2/Figures/Rectangle.cpp
  /home/ahmed/CLionProjects/untitled2/Figures/Rectangle.h
  /home/ahmed/CLionProjects/untitled2/common.h
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o
+ /home/ahmed/CLionProjects/untitled2/Figures/Text.cpp
+ /home/ahmed/CLionProjects/untitled2/Figures/Text.h
+ /home/ahmed/CLionProjects/untitled2/common.h
 CMakeFiles/untitled2.dir/GUI.cpp.o
+ /home/ahmed/CLionProjects/untitled2/Button.h
  /home/ahmed/CLionProjects/untitled2/Figures/Figure.h
  /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h
  /home/ahmed/CLionProjects/untitled2/Figures/Rectangle.h
+ /home/ahmed/CLionProjects/untitled2/Figures/Text.h
  /home/ahmed/CLionProjects/untitled2/GUI.cpp
  /home/ahmed/CLionProjects/untitled2/GUI.h
  /home/ahmed/CLionProjects/untitled2/common.h
 CMakeFiles/untitled2.dir/main.cpp.o
+ /home/ahmed/CLionProjects/untitled2/Button.h
  /home/ahmed/CLionProjects/untitled2/Figures/Circle.h
  /home/ahmed/CLionProjects/untitled2/Figures/Figure.h
  /home/ahmed/CLionProjects/untitled2/Figures/Line.h
  /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h
  /home/ahmed/CLionProjects/untitled2/Figures/Rectangle.h
+ /home/ahmed/CLionProjects/untitled2/Figures/Text.h
  /home/ahmed/CLionProjects/untitled2/GUI.h
  /home/ahmed/CLionProjects/untitled2/common.h
  /home/ahmed/CLionProjects/untitled2/main.cpp

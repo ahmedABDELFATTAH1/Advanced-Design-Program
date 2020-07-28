@@ -41,7 +41,17 @@
 },
 {
   "directory": "/home/ahmed/CLionProjects/untitled2/build",
-  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Properties.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Properties.cpp",
-  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Properties.cpp"
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Figures/Text.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Text.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Figures/Text.cpp"
+},
+{
+  "directory": "/home/ahmed/CLionProjects/untitled2/build",
+  "command": "/usr/bin/c++   -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR  -g   -o CMakeFiles/untitled2.dir/Button.cpp.o -c /home/ahmed/CLionProjects/untitled2/Button.cpp",
+  "file": "/home/ahmed/CLionProjects/untitled2/Button.cpp"
 }
 ]

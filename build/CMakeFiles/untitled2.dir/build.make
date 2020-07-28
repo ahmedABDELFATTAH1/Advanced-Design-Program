@@ -273,6 +273,54 @@ CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o.provides: CMakeFiles/untitled
 CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o.provides.build: CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o
 
 
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../Figures/Text.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/untitled2.dir/Figures/Text.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Figures/Text.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Text.cpp
+
+CMakeFiles/untitled2.dir/Figures/Text.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Figures/Text.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Figures/Text.cpp > CMakeFiles/untitled2.dir/Figures/Text.cpp.i
+
+CMakeFiles/untitled2.dir/Figures/Text.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Figures/Text.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Figures/Text.cpp -o CMakeFiles/untitled2.dir/Figures/Text.cpp.s
+
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o.requires:
+
+.PHONY : CMakeFiles/untitled2.dir/Figures/Text.cpp.o.requires
+
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o.provides: CMakeFiles/untitled2.dir/Figures/Text.cpp.o.requires
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Text.cpp.o.provides.build
+.PHONY : CMakeFiles/untitled2.dir/Figures/Text.cpp.o.provides
+
+CMakeFiles/untitled2.dir/Figures/Text.cpp.o.provides.build: CMakeFiles/untitled2.dir/Figures/Text.cpp.o
+
+
+CMakeFiles/untitled2.dir/Button.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Button.cpp.o: ../Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/untitled2.dir/Button.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Button.cpp.o -c /home/ahmed/CLionProjects/untitled2/Button.cpp
+
+CMakeFiles/untitled2.dir/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Button.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Button.cpp > CMakeFiles/untitled2.dir/Button.cpp.i
+
+CMakeFiles/untitled2.dir/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Button.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Button.cpp -o CMakeFiles/untitled2.dir/Button.cpp.s
+
+CMakeFiles/untitled2.dir/Button.cpp.o.requires:
+
+.PHONY : CMakeFiles/untitled2.dir/Button.cpp.o.requires
+
+CMakeFiles/untitled2.dir/Button.cpp.o.provides: CMakeFiles/untitled2.dir/Button.cpp.o.requires
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.o.provides.build
+.PHONY : CMakeFiles/untitled2.dir/Button.cpp.o.provides
+
+CMakeFiles/untitled2.dir/Button.cpp.o.provides.build: CMakeFiles/untitled2.dir/Button.cpp.o
+
+
 # Object files for target untitled2
 untitled2_OBJECTS = \
 "CMakeFiles/untitled2.dir/main.cpp.o" \
@@ -283,7 +331,9 @@ untitled2_OBJECTS = \
 "CMakeFiles/untitled2.dir/Colors/Colors.cpp.o" \
 "CMakeFiles/untitled2.dir/Actions.cpp.o" \
 "CMakeFiles/untitled2.dir/GUI.cpp.o" \
-"CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o"
+"CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o" \
+"CMakeFiles/untitled2.dir/Figures/Text.cpp.o" \
+"CMakeFiles/untitled2.dir/Button.cpp.o"
 
 # External object files for target untitled2
 untitled2_EXTERNAL_OBJECTS =
@@ -297,9 +347,11 @@ untitled2: CMakeFiles/untitled2.dir/Colors/Colors.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Actions.cpp.o
 untitled2: CMakeFiles/untitled2.dir/GUI.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Figures/Text.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Button.cpp.o
 untitled2: CMakeFiles/untitled2.dir/build.make
 untitled2: CMakeFiles/untitled2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahmed/CLionProjects/untitled2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable untitled2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahmed/CLionProjects/untitled2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable untitled2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -316,6 +368,8 @@ CMakeFiles/untitled2.dir/requires: CMakeFiles/untitled2.dir/Colors/Colors.cpp.o.
 CMakeFiles/untitled2.dir/requires: CMakeFiles/untitled2.dir/Actions.cpp.o.requires
 CMakeFiles/untitled2.dir/requires: CMakeFiles/untitled2.dir/GUI.cpp.o.requires
 CMakeFiles/untitled2.dir/requires: CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o.requires
+CMakeFiles/untitled2.dir/requires: CMakeFiles/untitled2.dir/Figures/Text.cpp.o.requires
+CMakeFiles/untitled2.dir/requires: CMakeFiles/untitled2.dir/Button.cpp.o.requires
 
 .PHONY : CMakeFiles/untitled2.dir/requires
 

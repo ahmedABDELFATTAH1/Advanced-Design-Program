@@ -17,12 +17,12 @@ int main()
 {
     std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>* pages=new std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>();
     sf::RenderWindow window(sf::VideoMode(GlobalScreenWidth, GlobalScreenheight), "Paint For Kids");
-    window.setFramerateLimit(60);
     GUI gui(pages,window);
-    gui.addPage();
+    window.setKeyRepeatEnabled(false);
     while(window.isOpen())
     {
       window.clear();
+      gui.update();
       gui.draw();
       window.display();
 
