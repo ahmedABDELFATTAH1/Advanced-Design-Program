@@ -12,17 +12,17 @@
 class GUI {
 private:
     std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>* pages;
+    std::unordered_map<std::string,Button*> mod_pages;
+    std::vector<Button*> panel_vec;
     sf::RenderWindow* window;
     std::string activePage;
     const std::string buildString="Page";
     int numPages;
     sf::Font* BLKCHCRY;
-    std::vector<Button*> panel_vec;
     void drawPagesLabels();
     int itr;
     sf::Event event;
     int state;
-    std::unordered_map<std::string,Button*> mod_pages;
     void addPanelButton(Button button);
     std::unordered_map<std::string,sf::Texture> textureGroup;
     void addPlusButton();

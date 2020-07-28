@@ -6,14 +6,14 @@
 
 bool Button::oNSelected(point p) {
     static int count=0;
-  if(rectangle->getUI().getGlobalBounds().contains(p.x,p.y))
+  if(rectangle->getGlobalBounds().contains(p.x,p.y))
   {
      toggleSelected();
   }
   return selected;
 }
 
-Button::Button(Rectangle* rec, Text* tex, std::string btn_name):rectangle(rec),text(tex),buttonName(btn_name) {
+Button::Button(sf::RectangleShape* rec, Text* tex, std::string btn_name):rectangle(rec),text(tex),buttonName(btn_name) {
 
 selected= false;
 
@@ -30,25 +30,29 @@ Button::~Button() {
 }
 
 void Button::drawButton(sf::RenderWindow *window) {
-    window->draw(rectangle->getUI());
+    window->draw(*rectangle);
     if(text)
     {
         text->drawText(window);
     }
 
 }
+void Button::changeSelectedUI()
+{
+    if(selected)
+    {
+        rectangle->setFillColor({200,200,200});
+    }else{
+        rectangle->setFillColor({100,100,100});
+    }
+}
 
 void Button::toggleSelected() {
     if(!selected)
     {
         selected= true;
-        std::cout<<(bool)selected<<std::endl;
-        rectangle->getUI().setOutlineThickness(3);
-        rectangle->getUI().setOutlineColor(sf::Color::Red);
-
     }else{
         selected= false;
-        rectangle->getUI().setOutlineThickness(0);
-        std::cout<<(bool)selected<<std::endl;
+
     }
 }

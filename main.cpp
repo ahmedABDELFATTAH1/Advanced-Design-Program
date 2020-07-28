@@ -1,8 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include<vector>
-#include "Figures/Circle.h"
-#include "Figures/Rectangle.h"
-#include "Figures/Line.h"
 #include<iostream>
 #include<cmath>
 #include <utility>

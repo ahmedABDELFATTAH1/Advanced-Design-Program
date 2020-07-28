@@ -4,23 +4,19 @@
 
 #include "PlaceHolder.h"
 
-PlaceHolder::PlaceHolder(sf::Font* f,point p1,point p2,sf::Texture* tex,color_comp col): text_font(f),p1(p1),p2(p2),
-texure(tex),color(col)
+PlaceHolder::PlaceHolder(sf::RectangleShape* backGround)
 {
-    figure=new Rectangle(col,p1,p2, true, nullptr);
+    this->backGround=backGround;
 }
 
-void PlaceHolder::changeFigure() {
-
+sf::RectangleShape* PlaceHolder::get_backGround()
+{
+    return backGround;
 }
 
-void PlaceHolder::buildUI() {
-
-}
 
 void PlaceHolder::drawUI(sf::RenderWindow& window) {
-
-window.draw(figure->getUI());
+window.draw(*backGround);
 for(auto text:labels)
 {
     window.draw(text);

@@ -12,15 +12,24 @@ loadTexture();
 BLKCHCRY=new sf::Font;
 if(!BLKCHCRY->loadFromFile("fonts/BLKCHCRY.TTF"))
     throw ("can't load form this file sorry");
-std::pair<PlaceHolder*,PlaceHolder*>* p=new std::pair<PlaceHolder*,PlaceHolder*> (new PlaceHolder(BLKCHCRY,{0,100},{200,600}, nullptr,{200,200,200}),
-                                   new PlaceHolder(BLKCHCRY,{200,100},{1300,600}, nullptr,{100,100,100}));
+
+
+    sf::RectangleShape* backGround=new sf::RectangleShape();
+    backGround->setPosition({0,100});
+    backGround->setSize({200,500});
+    backGround->setFillColor({255,255,255});
+    sf::RectangleShape* elementsLis=new sf::RectangleShape();
+    elementsLis->setPosition({200,100});
+    elementsLis->setSize({1100,500});
+    elementsLis->setFillColor({150,0,0});
+    std::pair<PlaceHolder*,PlaceHolder*>* p=new std::pair<PlaceHolder*,PlaceHolder*> (new PlaceHolder(backGround),
+                                                                                      new PlaceHolder(elementsLis));
 
 (*pages)[buildString+std::to_string(numPages)]=p;
 addPlusButton();
 setPanel();
 activePage=buildString+std::to_string(numPages);
-
-
+panel_vec[0]->toggleSelected();
 }
 
 void GUI::draw() {
@@ -33,8 +42,16 @@ void GUI::draw() {
 
 
 void GUI::addPage() {
-    std::pair<PlaceHolder*,PlaceHolder*>* p=new std::pair<PlaceHolder*,PlaceHolder*> (new PlaceHolder(BLKCHCRY,{0,100},{200,600}, nullptr,{200,200,200}),
-                                                                                      new PlaceHolder(BLKCHCRY,{200,100},{1300,600}, nullptr,{100,100,100}));
+    sf::RectangleShape* backGround=new sf::RectangleShape();
+    backGround->setPosition({0,100});
+    backGround->setSize({200,500});
+    backGround->setFillColor({255,255,255});
+    sf::RectangleShape* elementsLis=new sf::RectangleShape();
+    elementsLis->setPosition({200,100});
+    elementsLis->setSize({1100,500});
+    elementsLis->setFillColor({150,0,0});
+    std::pair<PlaceHolder*,PlaceHolder*>* p=new std::pair<PlaceHolder*,PlaceHolder*> (new PlaceHolder(backGround),
+                                                                                      new PlaceHolder(elementsLis));
     numPages++;
     (*pages)[buildString+std::to_string(numPages)]=p;
     activePage=buildString+std::to_string(numPages);
@@ -43,30 +60,34 @@ void GUI::addPage() {
 
 void GUI::drawPagesLabels() {
 
-    mod_pages["Plus"]->drawButton(window);
+
+    int x=sf::Mouse::getPosition(*window).x;
+    int y=sf::Mouse::getPosition(*window).y;
     for(int i=0;i<panel_vec.size();i++)
     {
         if(state==PRESSED_Trigger)
         {
-            int x=sf::Mouse::getPosition(*window).x;
-            int y=sf::Mouse::getPosition(*window).y;
             bool gotSelected=panel_vec[i]->oNSelected({x,y});
             if(gotSelected)
             {
-
+                panel_vec[i]->changeSelectedUI();
             }
 
         }
         panel_vec[i]->drawButton(window);
     }
-    state=NORMAL;
-    if(mod_pages["Plus"]->isSelected())
+
+    mod_pages["PLUS"]->drawButton(window);
+    if(state==PRESSED_Trigger) {
+        mod_pages["PLUS"]->oNSelected({x,y});
+    }
+        if(mod_pages["PLUS"]->isSelected())
     {
         addPage();
-        mod_pages["Plus"]->toggleSelected();
+        mod_pages["PLUS"]->toggleSelected();
     }
 
-
+    state=NORMAL;
 }
 
 void GUI::setPanel() {
@@ -75,9 +96,16 @@ void GUI::setPanel() {
     int width=200;
     for(int i=itr;i<=numPages;i++)
     {
+        if(numPages>5)
+        {
+            std::cout<<"HEllo ";
+        }
         Text* text=new Text;
-        Rectangle* rec=new Rectangle({255,255,255},{positionX,positionY},{positionX+width,positionY+high},false, nullptr);
-        text->setText({int(rec->getUI().getPosition().x),int(rec->getUI().getPosition().y)},sf::Color::Red,BLKCHCRY,buildString+std::to_string(i));
+        //{255,255,255},{positionX,positionY},{positionX+width,positionY+high},false, nullptr
+        sf::RectangleShape* rec=new sf::RectangleShape();
+        rec->setPosition(positionX,positionY);
+        rec->setSize({(float)width,(float)high});
+        text->setText({int(rec->getPosition().x),int(rec->getPosition().y)},sf::Color::Red,BLKCHCRY,buildString+std::to_string(i));
         positionY+=50;
         Button* button=new Button(rec,text,buildString+std::to_string(i));
         panel_vec.push_back(button);
@@ -109,10 +137,11 @@ void GUI::addPlusButton() {
     int high=50;
     int width=200;
     Text* text= nullptr;
-    Rectangle* rec=new Rectangle({255,255,255},{positionX,positionY},{positionX+width,positionY+high},false,&textureGroup["PLUS"]);
+    sf::RectangleShape* rec=new sf::RectangleShape();
+    rec->setPosition(positionX,positionY);
+    rec->setSize({(float)width,(float)high});
     positionY+=50;
     Button* button=new Button(rec,text,"PLUS");
-    panel_vec.push_back(button) ;
     mod_pages["PLUS"]=button;
 }
 

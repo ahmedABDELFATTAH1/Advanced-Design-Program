@@ -123,33 +123,6 @@ untitled2/fast:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/build
 .PHONY : untitled2/fast
 
-Actions.o: Actions.cpp.o
-
-.PHONY : Actions.o
-
-# target to build an object file
-Actions.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.o
-.PHONY : Actions.cpp.o
-
-Actions.i: Actions.cpp.i
-
-.PHONY : Actions.i
-
-# target to preprocess a source file
-Actions.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.i
-.PHONY : Actions.cpp.i
-
-Actions.s: Actions.cpp.s
-
-.PHONY : Actions.s
-
-# target to generate assembly for a file
-Actions.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.s
-.PHONY : Actions.cpp.s
-
 Button.o: Button.cpp.o
 
 .PHONY : Button.o
@@ -177,114 +150,6 @@ Button.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.s
 .PHONY : Button.cpp.s
 
-Colors/Colors.o: Colors/Colors.cpp.o
-
-.PHONY : Colors/Colors.o
-
-# target to build an object file
-Colors/Colors.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Colors/Colors.cpp.o
-.PHONY : Colors/Colors.cpp.o
-
-Colors/Colors.i: Colors/Colors.cpp.i
-
-.PHONY : Colors/Colors.i
-
-# target to preprocess a source file
-Colors/Colors.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Colors/Colors.cpp.i
-.PHONY : Colors/Colors.cpp.i
-
-Colors/Colors.s: Colors/Colors.cpp.s
-
-.PHONY : Colors/Colors.s
-
-# target to generate assembly for a file
-Colors/Colors.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Colors/Colors.cpp.s
-.PHONY : Colors/Colors.cpp.s
-
-Figures/Circle.o: Figures/Circle.cpp.o
-
-.PHONY : Figures/Circle.o
-
-# target to build an object file
-Figures/Circle.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Circle.cpp.o
-.PHONY : Figures/Circle.cpp.o
-
-Figures/Circle.i: Figures/Circle.cpp.i
-
-.PHONY : Figures/Circle.i
-
-# target to preprocess a source file
-Figures/Circle.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Circle.cpp.i
-.PHONY : Figures/Circle.cpp.i
-
-Figures/Circle.s: Figures/Circle.cpp.s
-
-.PHONY : Figures/Circle.s
-
-# target to generate assembly for a file
-Figures/Circle.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Circle.cpp.s
-.PHONY : Figures/Circle.cpp.s
-
-Figures/Figure.o: Figures/Figure.cpp.o
-
-.PHONY : Figures/Figure.o
-
-# target to build an object file
-Figures/Figure.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Figure.cpp.o
-.PHONY : Figures/Figure.cpp.o
-
-Figures/Figure.i: Figures/Figure.cpp.i
-
-.PHONY : Figures/Figure.i
-
-# target to preprocess a source file
-Figures/Figure.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Figure.cpp.i
-.PHONY : Figures/Figure.cpp.i
-
-Figures/Figure.s: Figures/Figure.cpp.s
-
-.PHONY : Figures/Figure.s
-
-# target to generate assembly for a file
-Figures/Figure.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Figure.cpp.s
-.PHONY : Figures/Figure.cpp.s
-
-Figures/Line.o: Figures/Line.cpp.o
-
-.PHONY : Figures/Line.o
-
-# target to build an object file
-Figures/Line.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Line.cpp.o
-.PHONY : Figures/Line.cpp.o
-
-Figures/Line.i: Figures/Line.cpp.i
-
-.PHONY : Figures/Line.i
-
-# target to preprocess a source file
-Figures/Line.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Line.cpp.i
-.PHONY : Figures/Line.cpp.i
-
-Figures/Line.s: Figures/Line.cpp.s
-
-.PHONY : Figures/Line.s
-
-# target to generate assembly for a file
-Figures/Line.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Line.cpp.s
-.PHONY : Figures/Line.cpp.s
-
 Figures/PlaceHolder.o: Figures/PlaceHolder.cpp.o
 
 .PHONY : Figures/PlaceHolder.o
@@ -311,33 +176,6 @@ Figures/PlaceHolder.s: Figures/PlaceHolder.cpp.s
 Figures/PlaceHolder.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s
 .PHONY : Figures/PlaceHolder.cpp.s
-
-Figures/Rectangle.o: Figures/Rectangle.cpp.o
-
-.PHONY : Figures/Rectangle.o
-
-# target to build an object file
-Figures/Rectangle.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.o
-.PHONY : Figures/Rectangle.cpp.o
-
-Figures/Rectangle.i: Figures/Rectangle.cpp.i
-
-.PHONY : Figures/Rectangle.i
-
-# target to preprocess a source file
-Figures/Rectangle.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.i
-.PHONY : Figures/Rectangle.cpp.i
-
-Figures/Rectangle.s: Figures/Rectangle.cpp.s
-
-.PHONY : Figures/Rectangle.s
-
-# target to generate assembly for a file
-Figures/Rectangle.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Rectangle.cpp.s
-.PHONY : Figures/Rectangle.cpp.s
 
 Figures/Text.o: Figures/Text.cpp.o
 
@@ -429,30 +267,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... untitled2"
-	@echo "... Actions.o"
-	@echo "... Actions.i"
-	@echo "... Actions.s"
 	@echo "... Button.o"
 	@echo "... Button.i"
 	@echo "... Button.s"
-	@echo "... Colors/Colors.o"
-	@echo "... Colors/Colors.i"
-	@echo "... Colors/Colors.s"
-	@echo "... Figures/Circle.o"
-	@echo "... Figures/Circle.i"
-	@echo "... Figures/Circle.s"
-	@echo "... Figures/Figure.o"
-	@echo "... Figures/Figure.i"
-	@echo "... Figures/Figure.s"
-	@echo "... Figures/Line.o"
-	@echo "... Figures/Line.i"
-	@echo "... Figures/Line.s"
 	@echo "... Figures/PlaceHolder.o"
 	@echo "... Figures/PlaceHolder.i"
 	@echo "... Figures/PlaceHolder.s"
-	@echo "... Figures/Rectangle.o"
-	@echo "... Figures/Rectangle.i"
-	@echo "... Figures/Rectangle.s"
 	@echo "... Figures/Text.o"
 	@echo "... Figures/Text.i"
 	@echo "... Figures/Text.s"
