@@ -86,28 +86,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Application.cpp">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Application.h">
+			<Option target="untitled2"/>
+		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Button.cpp">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Button.h">
 			<Option target="untitled2"/>
 		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp">
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Page.cpp">
 			<Option target="untitled2"/>
 		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h">
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Page.h">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Text.cpp">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Text.h">
-			<Option target="untitled2"/>
-		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/GUI.cpp">
-			<Option target="untitled2"/>
-		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/GUI.h">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/common.h">

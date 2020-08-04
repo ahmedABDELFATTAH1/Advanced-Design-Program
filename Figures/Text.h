@@ -12,6 +12,7 @@ private:
 public:
     void drawText(sf::RenderWindow * window);
     void setText(point pos,sf::Color col,sf::Font*,std::string str);
+    void changePosition(point p);
     Text();
     ~Text();
 };

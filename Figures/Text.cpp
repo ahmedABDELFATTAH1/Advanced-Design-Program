@@ -24,3 +24,7 @@ void Text::setText(point pos, sf::Color col, sf::Font* font, std::string str) {
     textui.setFont(*font);
     textui.setFillColor(col);
 }
+
+void Text::changePosition(point p) {
+    textui.setPosition(p.x,p.y);
+}

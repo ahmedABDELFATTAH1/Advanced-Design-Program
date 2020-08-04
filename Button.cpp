@@ -26,7 +26,8 @@ bool Button::isSelected() {
 
 
 Button::~Button() {
-
+    delete rectangle;
+    delete text;
 }
 
 void Button::drawButton(sf::RenderWindow *window) {
@@ -55,4 +56,9 @@ void Button::toggleSelected() {
         selected= false;
 
     }
+}
+
+void Button::changePosition(point p) {
+    rectangle->setPosition(p.x,p.y);
+    text->changePosition(p);
 }

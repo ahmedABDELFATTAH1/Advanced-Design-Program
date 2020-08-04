@@ -285,32 +285,32 @@ Figures/Line.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Line.cpp.s
 .PHONY : Figures/Line.cpp.s
 
-Figures/PlaceHolder.o: Figures/PlaceHolder.cpp.o
+Figures/Page.o: Figures/Page.cpp.o
 
-.PHONY : Figures/PlaceHolder.o
+.PHONY : Figures/Page.o
 
 # target to build an object file
-Figures/PlaceHolder.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o
-.PHONY : Figures/PlaceHolder.cpp.o
+Figures/Page.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Page.cpp.o
+.PHONY : Figures/Page.cpp.o
 
-Figures/PlaceHolder.i: Figures/PlaceHolder.cpp.i
+Figures/Page.i: Figures/Page.cpp.i
 
-.PHONY : Figures/PlaceHolder.i
+.PHONY : Figures/Page.i
 
 # target to preprocess a source file
-Figures/PlaceHolder.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i
-.PHONY : Figures/PlaceHolder.cpp.i
+Figures/Page.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Page.cpp.i
+.PHONY : Figures/Page.cpp.i
 
-Figures/PlaceHolder.s: Figures/PlaceHolder.cpp.s
+Figures/Page.s: Figures/Page.cpp.s
 
-.PHONY : Figures/PlaceHolder.s
+.PHONY : Figures/Page.s
 
 # target to generate assembly for a file
-Figures/PlaceHolder.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s
-.PHONY : Figures/PlaceHolder.cpp.s
+Figures/Page.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Page.cpp.s
+.PHONY : Figures/Page.cpp.s
 
 Figures/Rectangle.o: Figures/Rectangle.cpp.o
 
@@ -366,32 +366,32 @@ Figures/Text.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Figures/Text.cpp.s
 .PHONY : Figures/Text.cpp.s
 
-GUI.o: GUI.cpp.o
+Application.o: Application.cpp.o
 
-.PHONY : GUI.o
+.PHONY : Application.o
 
 # target to build an object file
-GUI.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/GUI.cpp.o
-.PHONY : GUI.cpp.o
+Application.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Application.cpp.o
+.PHONY : Application.cpp.o
 
-GUI.i: GUI.cpp.i
+Application.i: Application.cpp.i
 
-.PHONY : GUI.i
+.PHONY : Application.i
 
 # target to preprocess a source file
-GUI.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/GUI.cpp.i
-.PHONY : GUI.cpp.i
+Application.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Application.cpp.i
+.PHONY : Application.cpp.i
 
-GUI.s: GUI.cpp.s
+Application.s: Application.cpp.s
 
-.PHONY : GUI.s
+.PHONY : Application.s
 
 # target to generate assembly for a file
-GUI.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/GUI.cpp.s
-.PHONY : GUI.cpp.s
+Application.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Application.cpp.s
+.PHONY : Application.cpp.s
 
 main.o: main.cpp.o
 
@@ -447,18 +447,18 @@ help:
 	@echo "... Figures/Line.o"
 	@echo "... Figures/Line.i"
 	@echo "... Figures/Line.s"
-	@echo "... Figures/PlaceHolder.o"
-	@echo "... Figures/PlaceHolder.i"
-	@echo "... Figures/PlaceHolder.s"
+	@echo "... Figures/Page.o"
+	@echo "... Figures/Page.i"
+	@echo "... Figures/Page.s"
 	@echo "... Figures/Rectangle.o"
 	@echo "... Figures/Rectangle.i"
 	@echo "... Figures/Rectangle.s"
 	@echo "... Figures/Text.o"
 	@echo "... Figures/Text.i"
 	@echo "... Figures/Text.s"
-	@echo "... GUI.o"
-	@echo "... GUI.i"
-	@echo "... GUI.s"
+	@echo "... Application.o"
+	@echo "... Application.i"
+	@echo "... Application.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

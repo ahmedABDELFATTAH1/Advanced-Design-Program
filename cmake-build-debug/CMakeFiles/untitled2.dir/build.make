@@ -70,31 +70,31 @@ CMakeFiles/untitled2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/main.cpp -o CMakeFiles/untitled2.dir/main.cpp.s
 
-CMakeFiles/untitled2.dir/GUI.cpp.o: CMakeFiles/untitled2.dir/flags.make
-CMakeFiles/untitled2.dir/GUI.cpp.o: ../GUI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled2.dir/GUI.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/GUI.cpp.o -c /home/ahmed/CLionProjects/untitled2/GUI.cpp
+CMakeFiles/untitled2.dir/Application.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Application.cpp.o: ../Application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled2.dir/Application.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Application.cpp.o -c /home/ahmed/CLionProjects/untitled2/Application.cpp
 
-CMakeFiles/untitled2.dir/GUI.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/GUI.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/GUI.cpp > CMakeFiles/untitled2.dir/GUI.cpp.i
+CMakeFiles/untitled2.dir/Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Application.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Application.cpp > CMakeFiles/untitled2.dir/Application.cpp.i
 
-CMakeFiles/untitled2.dir/GUI.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/GUI.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/GUI.cpp -o CMakeFiles/untitled2.dir/GUI.cpp.s
+CMakeFiles/untitled2.dir/Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Application.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Application.cpp -o CMakeFiles/untitled2.dir/Application.cpp.s
 
-CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o: CMakeFiles/untitled2.dir/flags.make
-CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o: ../Figures/PlaceHolder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp
+CMakeFiles/untitled2.dir/Figures/Page.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Figures/Page.cpp.o: ../Figures/Page.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled2.dir/Figures/Page.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Figures/Page.cpp.o -c /home/ahmed/CLionProjects/untitled2/Figures/Page.cpp
 
-CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp > CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.i
+CMakeFiles/untitled2.dir/Figures/Page.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Figures/Page.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Figures/Page.cpp > CMakeFiles/untitled2.dir/Figures/Page.cpp.i
 
-CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.cpp -o CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.s
+CMakeFiles/untitled2.dir/Figures/Page.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Figures/Page.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Figures/Page.cpp -o CMakeFiles/untitled2.dir/Figures/Page.cpp.s
 
 CMakeFiles/untitled2.dir/Figures/Text.cpp.o: CMakeFiles/untitled2.dir/flags.make
 CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../Figures/Text.cpp
@@ -125,8 +125,8 @@ CMakeFiles/untitled2.dir/Button.cpp.s: cmake_force
 # Object files for target untitled2
 untitled2_OBJECTS = \
 "CMakeFiles/untitled2.dir/main.cpp.o" \
-"CMakeFiles/untitled2.dir/GUI.cpp.o" \
-"CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o" \
+"CMakeFiles/untitled2.dir/Application.cpp.o" \
+"CMakeFiles/untitled2.dir/Figures/Page.cpp.o" \
 "CMakeFiles/untitled2.dir/Figures/Text.cpp.o" \
 "CMakeFiles/untitled2.dir/Button.cpp.o"
 
@@ -134,8 +134,8 @@ untitled2_OBJECTS = \
 untitled2_EXTERNAL_OBJECTS =
 
 untitled2: CMakeFiles/untitled2.dir/main.cpp.o
-untitled2: CMakeFiles/untitled2.dir/GUI.cpp.o
-untitled2: CMakeFiles/untitled2.dir/Figures/PlaceHolder.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Application.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Figures/Page.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/Text.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Button.cpp.o
 untitled2: CMakeFiles/untitled2.dir/build.make

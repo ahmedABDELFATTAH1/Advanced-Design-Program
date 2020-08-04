@@ -59545,11 +59545,11 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 8 "/home/ahmed/CLionProjects/untitled2/main.cpp" 2
 
-# 1 "/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h" 1
-# 11 "/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h"
+# 1 "/home/ahmed/CLionProjects/untitled2/Figures/Page.h" 1
+# 11 "/home/ahmed/CLionProjects/untitled2/Figures/Page.h"
 
-# 11 "/home/ahmed/CLionProjects/untitled2/Figures/PlaceHolder.h"
-class PlaceHolder {
+# 11 "/home/ahmed/CLionProjects/untitled2/Figures/Page.h"
+class Page {
 private:
     Figure* figure;
     point p1;
@@ -59559,7 +59559,7 @@ private:
     color_comp color;
     std::vector<sf::Text> labels;
 public:
-PlaceHolder(sf::Font&,point p1,point p2,sf::Texture* tex,color_comp col);
+Page(sf::Font&,point p1,point p2,sf::Texture* tex,color_comp col);
 void changeFigure();
 void buildUI();
 void drawUI(sf::RenderWindow& window);
@@ -68715,10 +68715,10 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 49 "/usr/include/c++/7/unordered_map" 2 3
 # 12 "/home/ahmed/CLionProjects/untitled2/main.cpp" 2
-# 1 "/home/ahmed/CLionProjects/untitled2/GUI.h" 1
-# 9 "/home/ahmed/CLionProjects/untitled2/GUI.h"
+# 1 "/home/ahmed/CLionProjects/untitled2/Application.h" 1
+# 9 "/home/ahmed/CLionProjects/untitled2/Application.h"
 # 1 "/home/ahmed/CLionProjects/untitled2/common.h" 1
-# 10 "/home/ahmed/CLionProjects/untitled2/GUI.h" 2
+# 10 "/home/ahmed/CLionProjects/untitled2/Application.h" 2
 
 # 1 "/home/ahmed/CLionProjects/untitled2/Button.h" 1
 # 10 "/home/ahmed/CLionProjects/untitled2/Button.h"
@@ -68752,10 +68752,10 @@ public:
     ~Button();
 
 };
-# 12 "/home/ahmed/CLionProjects/untitled2/GUI.h" 2
-class GUI {
+# 12 "/home/ahmed/CLionProjects/untitled2/Application.h" 2
+class Application {
 private:
-    std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>* pages;
+    std::unordered_map<std::string,std::pair<Page*,Page*>*>* pages;
     sf::RenderWindow* window;
     const std::string mainPage="Page";
     int numPages;
@@ -68771,7 +68771,7 @@ private:
     void addPlusButton();
     void loadTexture();
 public:
-    GUI(std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>*,sf::RenderWindow&);
+    Application(std::unordered_map<std::string,std::pair<Page*,Page*>*>*,sf::RenderWindow&);
     void draw();
     void addPage();
     void setPanel();
@@ -68786,9 +68786,9 @@ int GlobalScreenWidth=1300;
 int GlobalScreenheight=600;
 int main()
 {
-    std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>* pages=new std::unordered_map<std::string,std::pair<PlaceHolder*,PlaceHolder*>*>();
+    std::unordered_map<std::string,std::pair<Page*,Page*>*>* pages=new std::unordered_map<std::string,std::pair<Page*,Page*>*>();
     sf::RenderWindow window(sf::VideoMode(GlobalScreenWidth, GlobalScreenheight), "Paint For Kids");
-    GUI gui(pages,window);
+    Application gui(pages,window);
     window.setKeyRepeatEnabled(false);
     while(window.isOpen())
     {

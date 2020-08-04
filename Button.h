@@ -21,6 +21,7 @@ public:
     bool oNSelected(point p);//should change the UI and the underlaying state
     void drawButton(sf::RenderWindow* window);
     void changeSelectedUI();
+    void changePosition(point p);
     ~Button();
 
 };
