@@ -21,3 +21,15 @@ for(int i=0;i<shapes.size();i++)
     window->draw(*shapes[i]);
 }
 }
+
+void Page::addShape(sf::Shape *shape) {
+shapes.push_back(shape);
+}
+
+Page::~Page() {
+    delete background;
+    for(int i=0;i<shapes.size();i++)
+    {
+        delete shapes[i];
+    }
+}

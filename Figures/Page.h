@@ -14,6 +14,8 @@ private:
 public:
 Page(sf::RenderWindow* window,const int upperBarheight);
 void drawUI();
+void addShape(sf::Shape* shape);
+~Page();
 };
 
 

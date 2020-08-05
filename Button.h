@@ -27,6 +27,7 @@ public:
     void changePosition(point p);
     void changeSelectedTexture();
     void setTextures(sf::Texture* tex2);
+    std::string getName();
     ~Button();
 
 };

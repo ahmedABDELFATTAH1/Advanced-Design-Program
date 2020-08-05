@@ -63,7 +63,7 @@ void Button::toggleSelected() {
 
 void Button::changePosition(point p) {
     rectangle->setPosition(p.x,p.y);
-    text->changePosition(p);
+    text->changePosition({int(p.x+rectangle->getSize().x/5),p.y});
 }
 
 void Button::changeSelectedTexture() {
@@ -78,4 +78,8 @@ void Button::changeSelectedTexture() {
 void Button::setTextures(sf::Texture *tex2) {
     texture1=rectangle->getTexture();
     texture2=tex2;
+}
+
+std::string Button::getName() {
+    return buttonName;
 }

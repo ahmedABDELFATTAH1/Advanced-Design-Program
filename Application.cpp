@@ -121,7 +121,7 @@ void Application::addLeftBar() {
     int height=window->getSize().y-upperBarHeight;
     rec=new sf::RectangleShape();
     rec->setPosition(positionX,positionY);
-    rec->setSize({(float)width,(float)height});
+    rec->setSize({(float)itemWidth,(float)height});
     rec->setOutlineThickness(3);
     rec->setOutlineColor({0,0,0});
     button=new Button(rec,text,"LEFT_PANEL_BACK");
@@ -197,6 +197,8 @@ if(mod_pages["DELETE"]->oNSelected({int(x),int(y)}))
           }
           delete panel_vec[i];
           panel_vec.erase(button);
+          delete  (*pages)[activePage];
+          activePage =panel_vec[0]->getName();
       }
 
     }
