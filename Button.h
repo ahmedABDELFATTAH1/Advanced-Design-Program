@@ -11,7 +11,10 @@ class Button {
 private:
     sf::RectangleShape* rectangle;
     Text* text;
+    Text* SelectedTexture;
     std::string buttonName;
+    const sf::Texture* texture1;
+    const sf::Texture* texture2;
     bool selected;
     int temp=0;
 public:
@@ -22,6 +25,8 @@ public:
     void drawButton(sf::RenderWindow* window);
     void changeSelectedUI();
     void changePosition(point p);
+    void changeSelectedTexture();
+    void setTextures(sf::Texture* tex2);
     ~Button();
 
 };

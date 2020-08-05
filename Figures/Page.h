@@ -8,14 +8,12 @@
 #include<vector>
 class Page {
 private:
-    sf::RectangleShape* backGround;
+    std::vector<sf::Shape *> shapes;
+    sf::RectangleShape * background;
+    sf::RenderWindow* window;
 public:
-Page(sf::RectangleShape*);
-void changeFigure();
-void buildUI();
-sf::RectangleShape* get_backGround();
-void drawUI(sf::RenderWindow& window);
-void addText(sf::Text text);
+Page(sf::RenderWindow* window,const int upperBarheight);
+void drawUI();
 };
 
 

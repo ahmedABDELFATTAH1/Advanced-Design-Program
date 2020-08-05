@@ -8,9 +8,12 @@ bool Button::oNSelected(point p) {
     static int count=0;
   if(rectangle->getGlobalBounds().contains(p.x,p.y))
   {
-     toggleSelected();
+    return true;
   }
-  return selected;
+else{
+    return false;
+}
+
 }
 
 Button::Button(sf::RectangleShape* rec, Text* tex, std::string btn_name):rectangle(rec),text(tex),buttonName(btn_name) {
@@ -61,4 +64,18 @@ void Button::toggleSelected() {
 void Button::changePosition(point p) {
     rectangle->setPosition(p.x,p.y);
     text->changePosition(p);
+}
+
+void Button::changeSelectedTexture() {
+    if(selected)
+    {
+        rectangle->setTexture(texture2);
+    }else{
+        rectangle->setTexture(texture1);
+    }
+}
+
+void Button::setTextures(sf::Texture *tex2) {
+    texture1=rectangle->getTexture();
+    texture2=tex2;
 }

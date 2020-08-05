@@ -16,20 +16,15 @@ Application::Application(sf::RenderWindow& wind) {
 
 void Application::draw() {
    Page* p=(*pages)[activePage];
-   p->drawUI(*window);
-    drawPagesLabels();
+   p->drawUI();
+   drawPagesLabels();
 }
 
 void Application::addPage() {
-    sf::RectangleShape* backGround=new sf::RectangleShape();
-    backGround->setPosition({float (window->getSize().x/6),float(upperBarHeight)});
-    backGround->setSize({window->getSize().x-float (window->getSize().x/6),float(window->getSize().y-upperBarHeight)});
-    backGround->setFillColor({255,255,255});
-    Page* p=new Page(backGround);
+    Page* p=new Page(window,upperBarHeight);
     (*pages)[buildString+std::to_string(numPages)]=p;
     activePage=buildString+std::to_string(numPages);
     addPageButton();
-    activePage=buildString+std::to_string(numPages);
     numPages++;
 }
 
@@ -48,7 +43,7 @@ void Application::drawPagesLabels() {
 }
 
 void Application::setPanel() {
-    int positionX=0,positionY=200;
+    int positionX=0,positionY=150;
     for(int i=0;i<panel_vec.size();i++)
     {
         Button* button=panel_vec[i];
@@ -89,7 +84,7 @@ void Application::update() {
 
 void Application::addLeftBar() {
 
-    int positionX=0,positionY=100;
+    int positionX=0,positionY=upperBarHeight;
     int width=50;
     Text* text= nullptr;
     sf::RectangleShape* rec=new sf::RectangleShape();
@@ -148,10 +143,17 @@ texture=new sf::Texture;
 texture->loadFromFile("assets/rectangle.png");
 textureGroup["RECTANGLE"]=texture;
 
+texture=new sf::Texture;
+texture->loadFromFile("assets/rectangle_selected.png");
+textureGroup["RECTANGLE_SELECTED"]=texture;
 
 texture=new sf::Texture;
 texture->loadFromFile("assets/triangle.png");
 textureGroup["TRIANGLE"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/triangle_selected.png");
+textureGroup["TRIANGLE_SELECTED"]=texture;
 }
 
 void Application::loadFonts() {
@@ -167,6 +169,7 @@ void Application::mousePressed(float x, float y) {
     {
         if(panel_vec[i]->oNSelected({int(x),int(y)}))
         {
+            panel_vec[i]->toggleSelected();
             panel_vec[i]->changeSelectedUI();
             for(int j=0;j<panel_vec.size();j++)
             {
@@ -177,9 +180,6 @@ void Application::mousePressed(float x, float y) {
                 }
 
             }
-        }
-        else{
-            panel_vec[i]->changeSelectedUI();
         }
 
     }
@@ -201,19 +201,30 @@ if(mod_pages["DELETE"]->oNSelected({int(x),int(y)}))
 
     }
     setPanel();
-    mod_pages["DELETE"]->toggleSelected();
 
 } else if(mod_pages["PLUS"]->oNSelected({int(x),int(y)}))
     {
         addPage();
-        mod_pages["PLUS"]->toggleSelected();
-        mod_pages["PLUS"]->changeSelectedUI();
     } else if(mod_pages["RECTANGLE"]->oNSelected({int(x),int(y)}))
 {
+    mod_pages["RECTANGLE"]->toggleSelected();
+    mod_pages["RECTANGLE"]->changeSelectedTexture();
+    if(mod_pages["TRIANGLE"]->isSelected())
+    {
+        mod_pages["TRIANGLE"]->toggleSelected();
+        mod_pages["TRIANGLE"]->changeSelectedTexture();
+    }
     std::cout<<"RECTANGLE"<<std::endl;
 }
 else if(mod_pages["TRIANGLE"]->oNSelected({int(x),int(y)}))
 {
+    mod_pages["TRIANGLE"]->toggleSelected();
+    mod_pages["TRIANGLE"]->changeSelectedTexture();
+    if(mod_pages["RECTANGLE"]->isSelected())
+    {
+        mod_pages["RECTANGLE"]->toggleSelected();
+        mod_pages["RECTANGLE"]->changeSelectedTexture();
+    }
     std::cout<<"TRIANGLE"<<std::endl;
 }
 
@@ -249,16 +260,18 @@ void Application::addUpperBar() {
     rec->setSize({(float)width,(float)upperBarHeight});
     rec->setTexture(textureGroup["RECTANGLE"]);
     button=new Button(rec,text,"RECTANGLE");
+    button->setTextures(textureGroup["RECTANGLE_SELECTED"]);
     mod_pages["RECTANGLE"]=button;
 
 
-    positionX+=width;
+    positionX+=(width+20);
     text= nullptr;
     rec=new sf::RectangleShape();
     rec->setPosition(positionX,positionY);
     rec->setSize({(float)width,(float)upperBarHeight});
     rec->setTexture(textureGroup["TRIANGLE"]);
     button=new Button(rec,text,"TRIANGLE");
+    button->setTextures(textureGroup["TRIANGLE_SELECTED"]);
     mod_pages["TRIANGLE"]=button;
 
 }

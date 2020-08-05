@@ -26,7 +26,7 @@ private:
     sf::Event event;
     int itemWidth;
     int itemHeight;
-    const int upperBarHeight=100;
+    const int upperBarHeight=50;
     std::vector<Button*> panel_vec;
     sf::RenderWindow* window;
     int numPages;

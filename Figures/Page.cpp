@@ -4,18 +4,20 @@
 
 #include "Page.h"
 
-Page::Page(sf::RectangleShape* backGround)
+Page::Page(sf::RenderWindow* window,const int upperBarheight)
 {
-    this->backGround=backGround;
+    this->window=window;
+    background=new sf::RectangleShape();
+    background->setPosition({float (window->getSize().x/6),float(upperBarheight)});
+    background->setSize({window->getSize().x-float (window->getSize().x/6),float(window->getSize().y-upperBarheight)});
+    background->setFillColor({10,200,0});
+
 }
 
-sf::RectangleShape* Page::get_backGround()
+void Page::drawUI() {
+window->draw(*background);
+for(int i=0;i<shapes.size();i++)
 {
-    return backGround;
+    window->draw(*shapes[i]);
 }
-
-
-void Page::drawUI(sf::RenderWindow& window) {
-window.draw(*backGround);
-
 }
