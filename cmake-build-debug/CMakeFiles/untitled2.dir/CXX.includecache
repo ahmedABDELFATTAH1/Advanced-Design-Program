@@ -19,6 +19,8 @@ Figures/Page.h
 /home/ahmed/CLionProjects/untitled2/Figures/Page.h
 Button.h
 /home/ahmed/CLionProjects/untitled2/Button.h
+random
+-
 
 /home/ahmed/CLionProjects/untitled2/Button.h
 common.h
@@ -45,4 +47,24 @@ iostream
 -
 vector
 -
+
+/home/ahmed/CLionProjects/untitled2/main.cpp
+SFML/Graphics.hpp
+-
+vector
+-
+iostream
+-
+cmath
+-
+utility
+-
+Figures/Page.h
+/home/ahmed/CLionProjects/untitled2/Figures/Page.h
+memory
+-
+unordered_map
+-
+Application.h
+/home/ahmed/CLionProjects/untitled2/Application.h
 

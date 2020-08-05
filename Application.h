@@ -9,6 +9,12 @@
 #include"common.h"
 #include "Figures/Page.h"
 #include"Button.h"
+#include <random>
+struct Dimensions{
+point p;
+int width;
+int height;
+};
 class Application {
 private:
     std::unordered_map<std::string,Page*>* pages;
@@ -20,10 +26,11 @@ private:
     sf::Event event;
     int itemWidth;
     int itemHeight;
+    const int upperBarHeight=100;
     std::vector<Button*> panel_vec;
     sf::RenderWindow* window;
     int numPages;
-    void addPlusButton();
+    void addLeftBar();
     void loadTexture();
     void loadFonts();
     void mousePressed(float x,float y);
@@ -31,6 +38,7 @@ private:
     void addPage();
     void setPanel();
     void drawPagesLabels();
+    void addUpperBar();
     void addPageButton();
 public:
     Application(sf::RenderWindow&);
