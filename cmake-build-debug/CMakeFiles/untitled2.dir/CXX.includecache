@@ -17,12 +17,12 @@ common.h
 /home/ahmed/CLionProjects/untitled2/common.h
 Figures/Page.h
 /home/ahmed/CLionProjects/untitled2/Figures/Page.h
-Button.h
-/home/ahmed/CLionProjects/untitled2/Button.h
+Element.h
+/home/ahmed/CLionProjects/untitled2/Element.h
 random
 -
 
-/home/ahmed/CLionProjects/untitled2/Button.h
+/home/ahmed/CLionProjects/untitled2/Element.h
 common.h
 /home/ahmed/CLionProjects/untitled2/common.h
 Figures/Text.h

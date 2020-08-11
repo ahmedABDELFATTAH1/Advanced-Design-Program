@@ -4,13 +4,13 @@
 CMakeFiles/untitled2.dir/Application.cpp.o
  /home/ahmed/CLionProjects/untitled2/Application.cpp
  /home/ahmed/CLionProjects/untitled2/Application.h
- /home/ahmed/CLionProjects/untitled2/Button.h
+ /home/ahmed/CLionProjects/untitled2/Element.h
  /home/ahmed/CLionProjects/untitled2/Figures/Page.h
  /home/ahmed/CLionProjects/untitled2/Figures/Text.h
  /home/ahmed/CLionProjects/untitled2/common.h
-CMakeFiles/untitled2.dir/Button.cpp.o
- /home/ahmed/CLionProjects/untitled2/Button.cpp
- /home/ahmed/CLionProjects/untitled2/Button.h
+CMakeFiles/untitled2.dir/Element.cpp.o
+ /home/ahmed/CLionProjects/untitled2/Element.cpp
+ /home/ahmed/CLionProjects/untitled2/Element.h
  /home/ahmed/CLionProjects/untitled2/Figures/Text.h
  /home/ahmed/CLionProjects/untitled2/common.h
 CMakeFiles/untitled2.dir/Figures/Page.cpp.o
@@ -23,7 +23,7 @@ CMakeFiles/untitled2.dir/Figures/Text.cpp.o
  /home/ahmed/CLionProjects/untitled2/common.h
 CMakeFiles/untitled2.dir/main.cpp.o
  /home/ahmed/CLionProjects/untitled2/Application.h
- /home/ahmed/CLionProjects/untitled2/Button.h
+ /home/ahmed/CLionProjects/untitled2/Element.h
  /home/ahmed/CLionProjects/untitled2/Figures/Page.h
  /home/ahmed/CLionProjects/untitled2/Figures/Text.h
  /home/ahmed/CLionProjects/untitled2/common.h

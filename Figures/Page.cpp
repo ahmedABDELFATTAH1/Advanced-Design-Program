@@ -10,7 +10,7 @@ Page::Page(sf::RenderWindow* window,const int upperBarheight)
     background=new sf::RectangleShape();
     background->setPosition({float (window->getSize().x/6),float(upperBarheight)});
     background->setSize({window->getSize().x-float (window->getSize().x/6),float(window->getSize().y-upperBarheight)});
-    background->setFillColor({10,200,0});
+    background->setFillColor({255,255,255}); 
 
 }
 
@@ -27,9 +27,5 @@ shapes.push_back(shape);
 }
 
 Page::~Page() {
-    delete background;
-    for(int i=0;i<shapes.size();i++)
-    {
-        delete shapes[i];
-    }
+
 }

@@ -2,12 +2,12 @@
 // Created by ahmed on ٢٧‏/٧‏/٢٠٢٠.
 //
 
-#ifndef UNTITLED2_BUTTON_H
-#define UNTITLED2_BUTTON_H
+#ifndef UNTITLED2_ELEMENT_H
+#define UNTITLED2_ELEMENT_H
 
 #include"common.h"
 #include"Figures/Text.h"
-class Button {
+class Element {
 private:
     sf::RectangleShape* rectangle;
     Text* text;
@@ -18,7 +18,7 @@ private:
     bool selected;
     int temp=0;
 public:
-    Button(sf::RectangleShape* rec,Text* tex,std::string btn_name);
+    Element(sf::RectangleShape* rec, Text* tex, std::string btn_name);
     bool isSelected();
     void toggleSelected();
     bool oNSelected(point p);//should change the UI and the underlaying state
@@ -28,9 +28,9 @@ public:
     void changeSelectedTexture();
     void setTextures(sf::Texture* tex2);
     std::string getName();
-    ~Button();
+    ~Element();
 
 };
 
 
-#endif //UNTITLED2_BUTTON_H
+#endif //UNTITLED2_ELEMENT_H

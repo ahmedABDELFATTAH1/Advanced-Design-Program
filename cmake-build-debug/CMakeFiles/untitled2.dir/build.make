@@ -109,18 +109,18 @@ CMakeFiles/untitled2.dir/Figures/Text.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Figures/Text.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Figures/Text.cpp -o CMakeFiles/untitled2.dir/Figures/Text.cpp.s
 
-CMakeFiles/untitled2.dir/Button.cpp.o: CMakeFiles/untitled2.dir/flags.make
-CMakeFiles/untitled2.dir/Button.cpp.o: ../Button.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled2.dir/Button.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Button.cpp.o -c /home/ahmed/CLionProjects/untitled2/Button.cpp
+CMakeFiles/untitled2.dir/Element.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/Element.cpp.o: ../Element.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled2.dir/Element.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Element.cpp.o -c /home/ahmed/CLionProjects/untitled2/Element.cpp
 
-CMakeFiles/untitled2.dir/Button.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Button.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Button.cpp > CMakeFiles/untitled2.dir/Button.cpp.i
+CMakeFiles/untitled2.dir/Element.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Element.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/CLionProjects/untitled2/Element.cpp > CMakeFiles/untitled2.dir/Element.cpp.i
 
-CMakeFiles/untitled2.dir/Button.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Button.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Button.cpp -o CMakeFiles/untitled2.dir/Button.cpp.s
+CMakeFiles/untitled2.dir/Element.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Element.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/CLionProjects/untitled2/Element.cpp -o CMakeFiles/untitled2.dir/Element.cpp.s
 
 # Object files for target untitled2
 untitled2_OBJECTS = \
@@ -128,7 +128,7 @@ untitled2_OBJECTS = \
 "CMakeFiles/untitled2.dir/Application.cpp.o" \
 "CMakeFiles/untitled2.dir/Figures/Page.cpp.o" \
 "CMakeFiles/untitled2.dir/Figures/Text.cpp.o" \
-"CMakeFiles/untitled2.dir/Button.cpp.o"
+"CMakeFiles/untitled2.dir/Element.cpp.o"
 
 # External object files for target untitled2
 untitled2_EXTERNAL_OBJECTS =
@@ -137,7 +137,7 @@ untitled2: CMakeFiles/untitled2.dir/main.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Application.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/Page.cpp.o
 untitled2: CMakeFiles/untitled2.dir/Figures/Text.cpp.o
-untitled2: CMakeFiles/untitled2.dir/Button.cpp.o
+untitled2: CMakeFiles/untitled2.dir/Element.cpp.o
 untitled2: CMakeFiles/untitled2.dir/build.make
 untitled2: CMakeFiles/untitled2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable untitled2"

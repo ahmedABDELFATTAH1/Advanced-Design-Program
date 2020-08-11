@@ -8,20 +8,25 @@
 #include<unordered_map>
 #include"Application.h"
 using namespace sf;
-int GlobalScreenWidth=1300;
-int GlobalScreenheight=600;
+#define GlobalScreenWidth 1366
+#define GlobalScreenheight 720
+
 int main()
 {
+    sf::Clock clock;
+    float lastTime = 0;
     sf::RenderWindow window(sf::VideoMode(GlobalScreenWidth, GlobalScreenheight), "Paint For Kids");
     Application application(window);
     window.setKeyRepeatEnabled(false);
     while(window.isOpen())
     {
+        clock.restart();
       window.clear();
       application.update();
       application.draw();
       window.display();
-
+      auto hello=clock.getElapsedTime();
+       // std::cout<<1/hello.asSeconds()<<std::endl;
     }
 
 

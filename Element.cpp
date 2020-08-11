@@ -2,10 +2,9 @@
 // Created by ahmed on ٢٧‏/٧‏/٢٠٢٠.
 //
 
-#include "Button.h"
+#include "Element.h"
 
-bool Button::oNSelected(point p) {
-    static int count=0;
+bool Element::oNSelected(point p) {
   if(rectangle->getGlobalBounds().contains(p.x,p.y))
   {
     return true;
@@ -16,24 +15,24 @@ else{
 
 }
 
-Button::Button(sf::RectangleShape* rec, Text* tex, std::string btn_name):rectangle(rec),text(tex),buttonName(btn_name) {
+Element::Element(sf::RectangleShape* rec, Text* tex, std::string btn_name): rectangle(rec), text(tex), buttonName(btn_name) {
 
 selected= false;
 
 }
 
 
-bool Button::isSelected() {
+bool Element::isSelected() {
    return selected;
 }
 
 
-Button::~Button() {
+Element::~Element() {
     delete rectangle;
     delete text;
 }
 
-void Button::drawButton(sf::RenderWindow *window) {
+void Element::drawButton(sf::RenderWindow *window) {
     window->draw(*rectangle);
     if(text)
     {
@@ -41,17 +40,17 @@ void Button::drawButton(sf::RenderWindow *window) {
     }
 
 }
-void Button::changeSelectedUI()
+void Element::changeSelectedUI()
 {
     if(selected)
     {
-        rectangle->setFillColor({200,200,200});
+        rectangle->setFillColor({20,20,20});
     }else{
-        rectangle->setFillColor({100,100,100});
+        rectangle->setFillColor({255,255,255});
     }
 }
 
-void Button::toggleSelected() {
+void Element::toggleSelected() {
     if(!selected)
     {
         selected= true;
@@ -61,12 +60,12 @@ void Button::toggleSelected() {
     }
 }
 
-void Button::changePosition(point p) {
+void Element::changePosition(point p) {
     rectangle->setPosition(p.x,p.y);
     text->changePosition({int(p.x+rectangle->getSize().x/5),p.y});
 }
 
-void Button::changeSelectedTexture() {
+void Element::changeSelectedTexture() {
     if(selected)
     {
         rectangle->setTexture(texture2);
@@ -75,11 +74,13 @@ void Button::changeSelectedTexture() {
     }
 }
 
-void Button::setTextures(sf::Texture *tex2) {
+void Element::setTextures(sf::Texture *tex2) {
     texture1=rectangle->getTexture();
     texture2=tex2;
 }
 
-std::string Button::getName() {
+
+
+std::string Element::getName() {
     return buttonName;
 }

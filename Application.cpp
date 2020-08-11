@@ -1,52 +1,53 @@
 
 #include "Application.h"
 Application::Application(sf::RenderWindow& wind) {
-    pages=new  std::unordered_map<std::string,Page*>();
-    itemWidth=200;
-    itemHeight=50;
-    this->pages=pages;
+    APPLICATION_STATE=MOUSE;
     this->window=&wind;
+    itemWidth=window->getSize().x/6;
+    itemHeight=50;
     numPages=1;
     loadTexture();
     loadFonts();
     addLeftBar();
     addUpperBar();
     addPage();
+    loadSprites();
 }
-
 void Application::draw() {
-   Page* p=(*pages)[activePage];
+   Page* p=pages[activePage];
    p->drawUI();
    drawPagesLabels();
 }
-
 void Application::addPage() {
     Page* p=new Page(window,upperBarHeight);
-    (*pages)[buildString+std::to_string(numPages)]=p;
+    pages[buildString+std::to_string(numPages)]=p;
     activePage=buildString+std::to_string(numPages);
     addPageButton();
     numPages++;
 }
-
 void Application::drawPagesLabels() {
-    mod_pages["LEFT_PANEL_BACK"]->drawButton(window);
-    for(int i=0;i<panel_vec.size();i++)
+    programElements["LEFT_PANEL_BACK"]->drawButton(window);
+    for(int i=0; i < pagesButtons.size(); i++)
     {
-        panel_vec[i]->drawButton(window);
+        pagesButtons[i]->drawButton(window);
     }
-    mod_pages["PLUS"]->drawButton(window);
-    mod_pages["DELETE"]->drawButton(window);
-    mod_pages["PAGES"]->drawButton(window);
-    mod_pages["UB_BACKGROUND"]->drawButton(window);
-    mod_pages["RECTANGLE"]->drawButton(window);
-    mod_pages["TRIANGLE"]->drawButton(window);
+    programElements["PLUS"]->drawButton(window);
+    programElements["DELETE"]->drawButton(window);
+    programElements["PAGES"]->drawButton(window);
+    programElements["UB_BACKGROUND"]->drawButton(window);
+    programElements["RECTANGLE"]->drawButton(window);
+    programElements["TRIANGLE"]->drawButton(window);
+    programElements["CIRCLE"]->drawButton(window);
+    programElements["CURSOR"]->drawButton(window);
+    programElements["HAND"]->drawButton(window);
+    programElements["LINE"]->drawButton(window);
+    window->draw(*cursorImage);
 }
-
 void Application::setPanel() {
-    int positionX=0,positionY=150;
-    for(int i=0;i<panel_vec.size();i++)
+    int positionX=0,positionY=155;
+    for(int i=0; i < pagesButtons.size(); i++)
     {
-        Button* button=panel_vec[i];
+        Element* button=pagesButtons[i];
         button->changePosition({positionX,positionY});
         positionY+=itemHeight;
     }
@@ -56,17 +57,19 @@ void Application::addPageButton()
     Text* text=new Text;
     sf::RectangleShape* rec=new sf::RectangleShape();
     rec->setSize({(float)itemWidth,(float)itemHeight});
-    rec->setFillColor({100,100,100});
+    rec->setFillColor({255,255,255});
+    rec->setOutlineColor({20,20,20});
+    rec->setOutlineThickness(2);
     text->setText({int(rec->getPosition().x),int(rec->getPosition().y)},sf::Color::Red,fonts["BLKCHCRY"],buildString+std::to_string(numPages));
-    Button* button=new Button(rec,text,buildString+std::to_string(numPages));
-    panel_vec.push_back(button);
+    Element* button=new Element(rec, text, buildString + std::to_string(numPages));
+    pagesButtons.push_back(button);
     setPanel();
 }
-
-
 void Application::update() {
+    cursorImage->setPosition(sf::Mouse::getPosition(*window).x,sf::Mouse::getPosition(*window).y);
     while (window->pollEvent(event))
     {
+
         switch (event.type) {
             case sf::Event::EventType::Closed:
                 window->close();
@@ -77,11 +80,12 @@ void Application::update() {
             case sf::Event::EventType::MouseButtonReleased:
                 break;
             default:
+                mouseHighlight(event.mouseMove.x,event.mouseMove.y);
                 break;
         }
     }
-}
 
+}
 void Application::addLeftBar() {
 
     int positionX=0,positionY=upperBarHeight;
@@ -91,16 +95,16 @@ void Application::addLeftBar() {
     rec->setPosition(positionX,positionY);
     rec->setSize({(float)width,(float)itemHeight});
     rec->setTexture(textureGroup["PLUS"]);
-    Button* button=new Button(rec,text,"PLUS");
-    mod_pages["PLUS"]=button;
+    Element* button=new Element(rec, text, "PLUS");
+    programElements["PLUS"]=button;
 
     positionX+=width;
     rec=new sf::RectangleShape();
     rec->setPosition(positionX,positionY);
     rec->setSize({(float)width,(float)itemHeight});
     rec->setTexture(textureGroup["DELETE"]);
-    button=new Button(rec,text,"DELETE");
-    mod_pages["DELETE"]=button;
+    button=new Element(rec, text, "DELETE");
+    programElements["DELETE"]=button;
 
     text=new Text();
     positionY += 50;
@@ -109,8 +113,8 @@ void Application::addLeftBar() {
     rec->setPosition(positionX,positionY);
     rec->setSize({(float)itemWidth,(float)itemHeight});
     text->setText({int(rec->getPosition().x),int(rec->getPosition().y)},sf::Color::Red,fonts["BLKCHCRY"],std::string("PAGES"));
-    button=new Button(rec,text,"PAGES");
-    mod_pages["PAGES"]=button;
+    button=new Element(rec, text, "PAGES");
+    programElements["PAGES"]=button;
 
 
 
@@ -124,12 +128,11 @@ void Application::addLeftBar() {
     rec->setSize({(float)itemWidth,(float)height});
     rec->setOutlineThickness(3);
     rec->setOutlineColor({0,0,0});
-    button=new Button(rec,text,"LEFT_PANEL_BACK");
+    button=new Element(rec, text, "LEFT_PANEL_BACK");
     rec->setFillColor({255,255,255});
-    mod_pages["LEFT_PANEL_BACK"]=button;
+    programElements["LEFT_PANEL_BACK"]=button;
 
 }
-
 void Application::loadTexture() {
 sf::Texture* texture=new sf::Texture;
 texture->loadFromFile("assets/plus.png");
@@ -154,84 +157,208 @@ textureGroup["TRIANGLE"]=texture;
 texture=new sf::Texture;
 texture->loadFromFile("assets/triangle_selected.png");
 textureGroup["TRIANGLE_SELECTED"]=texture;
-}
 
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/circle.png");
+textureGroup["CIRCLE"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/circle_selected.png");
+textureGroup["CIRCLE_SELECTED"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/line.png");
+textureGroup["LINE"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/line_selected.png");
+textureGroup["LINE_SELECTED"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/hand.png");
+textureGroup["HAND"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/hand_selected.png");
+textureGroup["HAND_SELECTED"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/resize_diagonal.png");
+textureGroup["RESIZE_DIAGONAL"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/resize_horizontal.png");
+textureGroup["RESIZE_HORIZONTAL"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/resize_vertical.png");
+textureGroup["RESIZE_VERTICAL"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/cursor.png");
+textureGroup["CURSOR"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/cursor_selected.png");
+textureGroup["CURSOR_SELECTED"]=texture;
+
+
+}
 void Application::loadFonts() {
     auto* BLKCHCRY=new sf::Font;
     if(!BLKCHCRY->loadFromFile("fonts/BLKCHCRY.TTF"))
         throw ("can't load form this file sorry");
     fonts["BLKCHCRY"]=BLKCHCRY;
 }
-
 void Application::mousePressed(float x, float y) {
 
-    for(int i=0;i<panel_vec.size();i++)
+    for(int i=0; i < pagesButtons.size(); i++)
     {
-        if(panel_vec[i]->oNSelected({int(x),int(y)}))
+        if(pagesButtons[i]->oNSelected({int(x), int(y)}))
         {
-            panel_vec[i]->toggleSelected();
-            panel_vec[i]->changeSelectedUI();
-            for(int j=0;j<panel_vec.size();j++)
+            pagesButtons[i]->toggleSelected();
+            pagesButtons[i]->changeSelectedUI();
+            activePage=pagesButtons[i]->getName();
+            for(int j=0; j < pagesButtons.size(); j++)
             {
-                if(j!=i&&panel_vec[j]->isSelected())
+                if(j!=i && pagesButtons[j]->isSelected())
                 {
-                    panel_vec[j]->toggleSelected();
-                    panel_vec[j]->changeSelectedUI();
+                    pagesButtons[j]->toggleSelected();
+                    pagesButtons[j]->changeSelectedUI();
                 }
 
             }
+            break;
         }
 
     }
-
-if(mod_pages["DELETE"]->oNSelected({int(x),int(y)}))
-{
-    for(int i=0;i<panel_vec.size();i++)
+    if(APPLICATION_STATE==RESIZE_VERTICAL)
     {
-      if(panel_vec[i]->isSelected())
+        std::cout<<"RESIZE_VERTICAL"<<std::endl;
+        //upperBarHeight=event.mouseMove.y;
+    }
+    else if(APPLICATION_STATE==RESIZE_HORIZONTAL)
+    {
+
+        std::cout<<"RESIZE_HORIZONTAL"<<std::endl;
+
+    }
+else if(programElements["DELETE"]->oNSelected({int(x), int(y)}))
+{
+    if(pagesButtons.size() == 1)
+    {
+        std::cout<<"Only one Page can't delete it sorry "<<std::endl;
+        return;
+    }
+    for(int i=0; i < pagesButtons.size(); i++)
+    {
+      if(pagesButtons[i]->isSelected())
       {
-          std::vector<Button*>::iterator button=panel_vec.begin();
+          pagesButtons[i]->toggleSelected();
+          std::vector<Element*>::iterator button=pagesButtons.begin();
           for(int j=0;j<i;j++)
           {
               button++;
           }
-          delete panel_vec[i];
-          panel_vec.erase(button);
-          delete  (*pages)[activePage];
-          activePage =panel_vec[0]->getName();
+          delete pagesButtons[i];
+          pagesButtons.erase(button);
+          delete  pages[activePage];
+          pages.erase(activePage);
+          activePage =pagesButtons[0]->getName();
       }
 
     }
     setPanel();
 
-} else if(mod_pages["PLUS"]->oNSelected({int(x),int(y)}))
+} else if(programElements["PLUS"]->oNSelected({int(x), int(y)}))
     {
         addPage();
-    } else if(mod_pages["RECTANGLE"]->oNSelected({int(x),int(y)}))
-{
-    mod_pages["RECTANGLE"]->toggleSelected();
-    mod_pages["RECTANGLE"]->changeSelectedTexture();
-    if(mod_pages["TRIANGLE"]->isSelected())
-    {
-        mod_pages["TRIANGLE"]->toggleSelected();
-        mod_pages["TRIANGLE"]->changeSelectedTexture();
     }
-    std::cout<<"RECTANGLE"<<std::endl;
+else if(programElements["RECTANGLE"]->oNSelected({int(x), int(y)}))
+{
+
+    for(int i=0;i<actionButtons.size();i++)
+    {
+        if(actionButtons[i]->isSelected())
+        {
+            actionButtons[i]->toggleSelected();
+            actionButtons[i]->changeSelectedTexture();
+        }
+    }
+    programElements["RECTANGLE"]->toggleSelected();
+    programElements["RECTANGLE"]->changeSelectedTexture();
 }
-else if(mod_pages["TRIANGLE"]->oNSelected({int(x),int(y)}))
+else if(programElements["TRIANGLE"]->oNSelected({int(x), int(y)}))
 {
-    mod_pages["TRIANGLE"]->toggleSelected();
-    mod_pages["TRIANGLE"]->changeSelectedTexture();
-    if(mod_pages["RECTANGLE"]->isSelected())
+
+    for(int i=0;i<actionButtons.size();i++)
     {
-        mod_pages["RECTANGLE"]->toggleSelected();
-        mod_pages["RECTANGLE"]->changeSelectedTexture();
+        if(actionButtons[i]->isSelected())
+        {
+            actionButtons[i]->toggleSelected();
+            actionButtons[i]->changeSelectedTexture();
+        }
     }
-    std::cout<<"TRIANGLE"<<std::endl;
+    programElements["TRIANGLE"]->toggleSelected();
+    programElements["TRIANGLE"]->changeSelectedTexture();
+}
+
+else if(programElements["CIRCLE"]->oNSelected({int(x), int(y)}))
+{
+
+    for(int i=0;i<actionButtons.size();i++)
+    {
+        if(actionButtons[i]->isSelected())
+        {
+            actionButtons[i]->toggleSelected();
+            actionButtons[i]->changeSelectedTexture();
+        }
+    }
+    programElements["CIRCLE"]->toggleSelected();
+    programElements["CIRCLE"]->changeSelectedTexture();
+}
+    else if(programElements["LINE"]->oNSelected({int(x), int(y)}))
+    {
+
+        for(int i=0;i<actionButtons.size();i++)
+        {
+            if(actionButtons[i]->isSelected())
+            {
+                actionButtons[i]->toggleSelected();
+                actionButtons[i]->changeSelectedTexture();
+            }
+        }
+        programElements["LINE"]->toggleSelected();
+        programElements["LINE"]->changeSelectedTexture();
+    }
+else if(programElements["CURSOR"]->oNSelected({int(x), int(y)})) {
+        for(int i=0;i<actionButtons.size();i++)
+        {
+            if(actionButtons[i]->isSelected())
+            {
+                actionButtons[i]->toggleSelected();
+                actionButtons[i]->changeSelectedTexture();
+            }
+        }
+        programElements["CURSOR"]->toggleSelected();
+        programElements["CURSOR"]->changeSelectedTexture();
+    }
+else if(programElements["HAND"]->oNSelected({int(x), int(y)}))
+{
+    for(int i=0;i<actionButtons.size();i++)
+    {
+        if(actionButtons[i]->isSelected())
+        {
+            actionButtons[i]->toggleSelected();
+            actionButtons[i]->changeSelectedTexture();
+        }
+    }
+    programElements["HAND"]->toggleSelected();
+    programElements["HAND"]->changeSelectedTexture();
 }
 
 }
-
 void Application::mouseReleased(float x, float y) {
 
 
@@ -239,7 +366,11 @@ void Application::mouseReleased(float x, float y) {
 
 
 }
+void Application::moveUpperBar() {
 
+
+
+}
 void Application::addUpperBar() {
 
     int positionX=0,positionY=0;
@@ -251,9 +382,9 @@ void Application::addUpperBar() {
     rec->setSize({(float)width,(float)height});
     rec->setOutlineThickness(3);
     rec->setOutlineColor({0,0,0});
-    Button* button=new Button(rec,text,"UB_BACKGROUND");
+    Element* button=new Element(rec, text, "UB_BACKGROUND");
     rec->setFillColor({255,255,255});
-    mod_pages["UB_BACKGROUND"]=button;
+    programElements["UB_BACKGROUND"]=button;
 
     width=50;
     text= nullptr;
@@ -261,10 +392,10 @@ void Application::addUpperBar() {
     rec->setPosition(positionX,positionY);
     rec->setSize({(float)width,(float)upperBarHeight});
     rec->setTexture(textureGroup["RECTANGLE"]);
-    button=new Button(rec,text,"RECTANGLE");
+    button=new Element(rec, text, "RECTANGLE");
     button->setTextures(textureGroup["RECTANGLE_SELECTED"]);
-    mod_pages["RECTANGLE"]=button;
-
+    programElements["RECTANGLE"]=button;
+    actionButtons.push_back(button);
 
     positionX+=(width+20);
     text= nullptr;
@@ -272,10 +403,83 @@ void Application::addUpperBar() {
     rec->setPosition(positionX,positionY);
     rec->setSize({(float)width,(float)upperBarHeight});
     rec->setTexture(textureGroup["TRIANGLE"]);
-    button=new Button(rec,text,"TRIANGLE");
+    button=new Element(rec, text, "TRIANGLE");
     button->setTextures(textureGroup["TRIANGLE_SELECTED"]);
-    mod_pages["TRIANGLE"]=button;
+    programElements["TRIANGLE"]=button;
+    actionButtons.push_back(button);
+
+    positionX+=(width+20);
+    text= nullptr;
+    rec=new sf::RectangleShape();
+    rec->setPosition(positionX,positionY);
+    rec->setSize({(float)width,(float)upperBarHeight});
+    rec->setTexture(textureGroup["CIRCLE"]);
+    button=new Element(rec, text, "CIRCLE");
+    button->setTextures(textureGroup["CIRCLE_SELECTED"]);
+    programElements["CIRCLE"]=button;
+    actionButtons.push_back(button);
+
+
+    positionX+=(width+20);
+    text= nullptr;
+    rec=new sf::RectangleShape();
+    rec->setPosition(positionX,positionY);
+    rec->setSize({(float)width,(float)upperBarHeight});
+    rec->setTexture(textureGroup["LINE"]);
+    button=new Element(rec, text, "LINE");
+    button->setTextures(textureGroup["LINE_SELECTED"]);
+    programElements["LINE"]=button;
+    actionButtons.push_back(button);
+
+
+    positionX+=(width+20);
+    text= nullptr;
+    rec=new sf::RectangleShape();
+    rec->setPosition(positionX,positionY);
+    rec->setSize({(float)width,(float)upperBarHeight});
+    rec->setTexture(textureGroup["CURSOR"]);
+    button=new Element(rec, text, "CURSOR");
+    button->setTextures(textureGroup["CURSOR_SELECTED"]);
+    programElements["CURSOR"]=button;
+    actionButtons.push_back(button);
+
+    positionX+=(width+20);
+    text= nullptr;
+    rec=new sf::RectangleShape();
+    rec->setPosition(positionX,positionY);
+    rec->setSize({(float)width,(float)upperBarHeight});
+    rec->setTexture(textureGroup["HAND"]);
+    button=new Element(rec, text, "HAND");
+    button->setTextures(textureGroup["HAND_SELECTED"]);
+    programElements["HAND"]=button;
+    actionButtons.push_back(button);
+}
+void Application::mouseHighlight(float x, float y) {
+
+if(x>itemWidth-10&&x<itemWidth+10 &&y>upperBarHeight+10)//this means resize horizontaly
+{
+    APPLICATION_STATE=RESIZE_HORIZONTAL;
+    cursorImage->setTexture(textureGroup["RESIZE_HORIZONTAL"]);
 
 }
+else if(y>upperBarHeight-10&&y<upperBarHeight+10 && x>itemWidth)
+{
+    APPLICATION_STATE=RESIZE_VERTICAL;
+    cursorImage->setTexture(textureGroup["RESIZE_VERTICAL"]);
+}
+else{
+    APPLICATION_STATE=MOUSE;
+    cursorImage->setTexture(textureGroup["CURSOR"]);
+}
+
+
+}
+void Application::loadSprites() {
+    cursorImage=new sf::RectangleShape();
+    cursorImage->setSize({40,40});
+    cursorImage->setTexture(textureGroup["CURSOR"]);
+    window->setMouseCursorVisible(false);
+}
+
 
 

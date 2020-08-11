@@ -3,15 +3,15 @@
 
 CMakeFiles/untitled2.dir/Application.cpp.o: ../Application.cpp
 CMakeFiles/untitled2.dir/Application.cpp.o: ../Application.h
-CMakeFiles/untitled2.dir/Application.cpp.o: ../Button.h
+CMakeFiles/untitled2.dir/Application.cpp.o: ../Element.h
 CMakeFiles/untitled2.dir/Application.cpp.o: ../Figures/Page.h
 CMakeFiles/untitled2.dir/Application.cpp.o: ../Figures/Text.h
 CMakeFiles/untitled2.dir/Application.cpp.o: ../common.h
 
-CMakeFiles/untitled2.dir/Button.cpp.o: ../Button.cpp
-CMakeFiles/untitled2.dir/Button.cpp.o: ../Button.h
-CMakeFiles/untitled2.dir/Button.cpp.o: ../Figures/Text.h
-CMakeFiles/untitled2.dir/Button.cpp.o: ../common.h
+CMakeFiles/untitled2.dir/Element.cpp.o: ../Element.cpp
+CMakeFiles/untitled2.dir/Element.cpp.o: ../Element.h
+CMakeFiles/untitled2.dir/Element.cpp.o: ../Figures/Text.h
+CMakeFiles/untitled2.dir/Element.cpp.o: ../common.h
 
 CMakeFiles/untitled2.dir/Figures/Page.cpp.o: ../Figures/Page.cpp
 CMakeFiles/untitled2.dir/Figures/Page.cpp.o: ../Figures/Page.h
@@ -22,7 +22,7 @@ CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../Figures/Text.h
 CMakeFiles/untitled2.dir/Figures/Text.cpp.o: ../common.h
 
 CMakeFiles/untitled2.dir/main.cpp.o: ../Application.h
-CMakeFiles/untitled2.dir/main.cpp.o: ../Button.h
+CMakeFiles/untitled2.dir/main.cpp.o: ../Element.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Page.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../Figures/Text.h
 CMakeFiles/untitled2.dir/main.cpp.o: ../common.h

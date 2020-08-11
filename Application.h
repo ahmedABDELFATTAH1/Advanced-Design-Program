@@ -8,26 +8,27 @@
 #include <unordered_map>
 #include"common.h"
 #include "Figures/Page.h"
-#include"Button.h"
+#include"Element.h"
 #include <random>
-struct Dimensions{
-point p;
-int width;
-int height;
+enum states{
+    MOUSE,SELECT_SHAPE,RESIZE_HORIZONTAL,RESIZE_VERTICAL
 };
 class Application {
 private:
-    std::unordered_map<std::string,Page*>* pages;
-    std::unordered_map<std::string,Button*> mod_pages;
+    std::unordered_map<std::string,Page*> pages;
+    std::unordered_map<std::string,Element*> programElements;
     std::unordered_map<std::string,sf::Texture*> textureGroup;
+    std::vector<Element*> actionButtons;
+    std::vector<Element*> pagesButtons;
     std::unordered_map<std::string,sf::Font*> fonts;
+    sf::RectangleShape* cursorImage;
+    int APPLICATION_STATE;
     std::string activePage;
     const std::string buildString="Page";
     sf::Event event;
     int itemWidth;
     int itemHeight;
-    const int upperBarHeight=50;
-    std::vector<Button*> panel_vec;
+    int upperBarHeight=50;
     sf::RenderWindow* window;
     int numPages;
     void addLeftBar();
@@ -40,6 +41,9 @@ private:
     void drawPagesLabels();
     void addUpperBar();
     void addPageButton();
+    void mouseHighlight(float x,float y);
+    void loadSprites();
+    void moveUpperBar();
 public:
     Application(sf::RenderWindow&);
     void draw();

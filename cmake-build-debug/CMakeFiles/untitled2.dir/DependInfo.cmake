@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ahmed/CLionProjects/untitled2/Application.cpp" "/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/Application.cpp.o"
-  "/home/ahmed/CLionProjects/untitled2/Button.cpp" "/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/Button.cpp.o"
+  "/home/ahmed/CLionProjects/untitled2/Element.cpp" "/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/Element.cpp.o"
   "/home/ahmed/CLionProjects/untitled2/Figures/Page.cpp" "/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/Figures/Page.cpp.o"
   "/home/ahmed/CLionProjects/untitled2/Figures/Text.cpp" "/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/Figures/Text.cpp.o"
   "/home/ahmed/CLionProjects/untitled2/main.cpp" "/home/ahmed/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/main.cpp.o"

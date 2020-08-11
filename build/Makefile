@@ -150,32 +150,32 @@ Actions.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Actions.cpp.s
 .PHONY : Actions.cpp.s
 
-Button.o: Button.cpp.o
+Element.o: Element.cpp.o
 
-.PHONY : Button.o
+.PHONY : Element.o
 
 # target to build an object file
-Button.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.o
-.PHONY : Button.cpp.o
+Element.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Element.cpp.o
+.PHONY : Element.cpp.o
 
-Button.i: Button.cpp.i
+Element.i: Element.cpp.i
 
-.PHONY : Button.i
+.PHONY : Element.i
 
 # target to preprocess a source file
-Button.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.i
-.PHONY : Button.cpp.i
+Element.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Element.cpp.i
+.PHONY : Element.cpp.i
 
-Button.s: Button.cpp.s
+Element.s: Element.cpp.s
 
-.PHONY : Button.s
+.PHONY : Element.s
 
 # target to generate assembly for a file
-Button.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Button.cpp.s
-.PHONY : Button.cpp.s
+Element.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Element.cpp.s
+.PHONY : Element.cpp.s
 
 Colors/Colors.o: Colors/Colors.cpp.o
 
@@ -432,9 +432,9 @@ help:
 	@echo "... Actions.o"
 	@echo "... Actions.i"
 	@echo "... Actions.s"
-	@echo "... Button.o"
-	@echo "... Button.i"
-	@echo "... Button.s"
+	@echo "... Element.o"
+	@echo "... Element.i"
+	@echo "... Element.s"
 	@echo "... Colors/Colors.o"
 	@echo "... Colors/Colors.i"
 	@echo "... Colors/Colors.s"

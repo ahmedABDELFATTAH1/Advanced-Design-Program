@@ -45124,7 +45124,7 @@ public:
 
 
 
-    enum Button
+    enum Element
     {
         Left,
         Right,
@@ -45145,7 +45145,7 @@ public:
         HorizontalWheel
     };
 # 80 "/usr/include/SFML/Window/Mouse.hpp" 3 4
-    static bool isButtonPressed(Button button);
+    static bool isButtonPressed(Element button);
 # 91 "/usr/include/SFML/Window/Mouse.hpp" 3 4
     static Vector2i getPosition();
 # 104 "/usr/include/SFML/Window/Mouse.hpp" 3 4
@@ -45256,7 +45256,7 @@ public:
 
     struct MouseButtonEvent
     {
-        Mouse::Button button;
+        Mouse::Element button;
         int x;
         int y;
     };
@@ -68720,8 +68720,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 1 "/home/ahmed/CLionProjects/untitled2/common.h" 1
 # 10 "/home/ahmed/CLionProjects/untitled2/Application.h" 2
 
-# 1 "/home/ahmed/CLionProjects/untitled2/Button.h" 1
-# 10 "/home/ahmed/CLionProjects/untitled2/Button.h"
+# 1 "/home/ahmed/CLionProjects/untitled2/Element.h" 1
+# 10 "/home/ahmed/CLionProjects/untitled2/Element.h"
 # 1 "/home/ahmed/CLionProjects/untitled2/Figures/Text.h" 1
 # 9 "/home/ahmed/CLionProjects/untitled2/Figures/Text.h"
 
@@ -68735,8 +68735,8 @@ public:
     Text();
     ~Text();
 };
-# 11 "/home/ahmed/CLionProjects/untitled2/Button.h" 2
-class Button {
+# 11 "/home/ahmed/CLionProjects/untitled2/Element.h" 2
+class Element {
 private:
     Rectangle* rectangle;
     Text* text;
@@ -68744,12 +68744,12 @@ private:
     bool selected;
     int temp=0;
 public:
-    Button(Rectangle* rec,Text* tex,std::string btn_name);
+    Element(Rectangle* rec,Text* tex,std::string btn_name);
     bool isSelected();
     void toggleSelected();
     void oNSelected(point p);
     void drawButton(sf::RenderWindow* window);
-    ~Button();
+    ~Element();
 
 };
 # 12 "/home/ahmed/CLionProjects/untitled2/Application.h" 2
@@ -68760,13 +68760,13 @@ private:
     const std::string mainPage="Page";
     int numPages;
     sf::Font* BLKCHCRY;
-    std::vector<Button*> panel_vec;
+    std::vector<Element*> pagesButtons;
     void drawPagesLabels();
     int itr;
     sf::Event event;
     int state;
-    std::unordered_map<std::string,Button*> access_Buttons;
-    void addPanelButton(Button button);
+    std::unordered_map<std::string,Element*> access_Buttons;
+    void addPanelButton(Element button);
     std::unordered_map<std::string,sf::Texture> textureGroup;
     void addLeftBar();
     void loadTexture();
@@ -68778,7 +68778,7 @@ public:
     void update();
 };
 enum clickStates{
-    NORMAL,PRESSED_Trigger,Pressing
+    MOUSE,PRESSED_Trigger,Pressing
 };
 # 13 "/home/ahmed/CLionProjects/untitled2/main.cpp" 2
 using namespace sf;

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/untitled2.dir/Application.cpp.o"
-  "CMakeFiles/untitled2.dir/Button.cpp.o"
+  "CMakeFiles/untitled2.dir/Element.cpp.o"
   "CMakeFiles/untitled2.dir/Figures/Page.cpp.o"
   "CMakeFiles/untitled2.dir/Figures/Text.cpp.o"
   "CMakeFiles/untitled2.dir/main.cpp.o"

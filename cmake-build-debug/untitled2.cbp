@@ -92,10 +92,10 @@
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Application.h">
 			<Option target="untitled2"/>
 		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/Button.cpp">
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Element.cpp">
 			<Option target="untitled2"/>
 		</Unit>
-		<Unit filename="/home/ahmed/CLionProjects/untitled2/Button.h">
+		<Unit filename="/home/ahmed/CLionProjects/untitled2/Element.h">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/ahmed/CLionProjects/untitled2/Figures/Page.cpp">
