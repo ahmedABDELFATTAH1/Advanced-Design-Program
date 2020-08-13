@@ -2,6 +2,7 @@
 #include "Application.h"
 Application::Application(sf::RenderWindow& wind) {
     APPLICATION_STATE=MOUSE;
+    temp= nullptr;
     this->window=&wind;
     itemWidth=window->getSize().x/6;
     itemHeight=50;
@@ -12,6 +13,8 @@ Application::Application(sf::RenderWindow& wind) {
     addUpperBar();
     addPage();
     loadSprites();
+    programElements["CURSOR"]->toggleSelected();
+    programElements["CURSOR"]->changeSelectedTexture();
 }
 void Application::draw() {
    Page* p=pages[activePage];
@@ -42,6 +45,8 @@ void Application::drawPagesLabels() {
     programElements["HAND"]->drawButton(window);
     programElements["LINE"]->drawButton(window);
     window->draw(*cursorImage);
+    if(temp)
+    window->draw(*temp);
 }
 void Application::setPanel() {
     int positionX=0,positionY=155;
@@ -78,6 +83,7 @@ void Application::update() {
                 mousePressed(event.mouseButton.x,event.mouseButton.y);
                 break;
             case sf::Event::EventType::MouseButtonReleased:
+                mouseReleased(event.mouseMove.x,event.mouseMove.y);
                 break;
             default:
                 mouseHighlight(event.mouseMove.x,event.mouseMove.y);
@@ -141,6 +147,10 @@ textureGroup["PLUS"]=texture;
 texture=new sf::Texture;
 texture->loadFromFile("assets/delete.png");
 textureGroup["DELETE"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/dot.png");
+textureGroup["DOT"]=texture;
 
 texture=new sf::Texture;
 texture->loadFromFile("assets/rectangle.png");
@@ -236,13 +246,41 @@ void Application::mousePressed(float x, float y) {
     if(APPLICATION_STATE==RESIZE_VERTICAL)
     {
         std::cout<<"RESIZE_VERTICAL"<<std::endl;
-        //upperBarHeight=event.mouseMove.y;
+      APPLICATION_STATE=RESIZE_VERTICAL;
     }
     else if(APPLICATION_STATE==RESIZE_HORIZONTAL)
     {
-
         std::cout<<"RESIZE_HORIZONTAL"<<std::endl;
-
+        APPLICATION_STATE=RESIZE_HORIZONTAL;
+    }
+    else if(onPageBound(x,y))
+    {
+        switch (APPLICATION_STATE) {
+            case MOUSE:
+                return;
+            case SELECT_RECTANGLE:
+                temp=new sf::RectangleShape();
+                temp->setPosition({x,y});
+                temp->setOutlineColor({0,0,0});
+                temp->setOutlineThickness(5);
+                break;
+            case SELECT_CIRCLE:
+                temp=new sf::CircleShape();
+                temp->setPosition({x,y});
+                temp->setOutlineColor({0,0,0});
+                temp->setOutlineThickness(5);
+                static_cast<sf::CircleShape*>(temp)->setPointCount(200);
+                break;
+            case SELECT_TRIANGLE:
+                break;
+            case SELECT_LINE:
+                temp=new sf::RectangleShape();
+                temp->setPosition({x,y});
+                temp->setFillColor({0,0,0});
+                break;
+            default:
+                break;
+        }
     }
 else if(programElements["DELETE"]->oNSelected({int(x), int(y)}))
 {
@@ -288,6 +326,8 @@ else if(programElements["RECTANGLE"]->oNSelected({int(x), int(y)}))
     }
     programElements["RECTANGLE"]->toggleSelected();
     programElements["RECTANGLE"]->changeSelectedTexture();
+    APPLICATION_STATE=SELECT_RECTANGLE;
+
 }
 else if(programElements["TRIANGLE"]->oNSelected({int(x), int(y)}))
 {
@@ -302,6 +342,7 @@ else if(programElements["TRIANGLE"]->oNSelected({int(x), int(y)}))
     }
     programElements["TRIANGLE"]->toggleSelected();
     programElements["TRIANGLE"]->changeSelectedTexture();
+    APPLICATION_STATE=SELECT_TRIANGLE;
 }
 
 else if(programElements["CIRCLE"]->oNSelected({int(x), int(y)}))
@@ -317,6 +358,7 @@ else if(programElements["CIRCLE"]->oNSelected({int(x), int(y)}))
     }
     programElements["CIRCLE"]->toggleSelected();
     programElements["CIRCLE"]->changeSelectedTexture();
+    APPLICATION_STATE=SELECT_CIRCLE;
 }
     else if(programElements["LINE"]->oNSelected({int(x), int(y)}))
     {
@@ -331,6 +373,7 @@ else if(programElements["CIRCLE"]->oNSelected({int(x), int(y)}))
         }
         programElements["LINE"]->toggleSelected();
         programElements["LINE"]->changeSelectedTexture();
+        APPLICATION_STATE=SELECT_LINE;
     }
 else if(programElements["CURSOR"]->oNSelected({int(x), int(y)})) {
         for(int i=0;i<actionButtons.size();i++)
@@ -343,6 +386,7 @@ else if(programElements["CURSOR"]->oNSelected({int(x), int(y)})) {
         }
         programElements["CURSOR"]->toggleSelected();
         programElements["CURSOR"]->changeSelectedTexture();
+        APPLICATION_STATE=MOUSE;
     }
 else if(programElements["HAND"]->oNSelected({int(x), int(y)}))
 {
@@ -356,13 +400,34 @@ else if(programElements["HAND"]->oNSelected({int(x), int(y)}))
     }
     programElements["HAND"]->toggleSelected();
     programElements["HAND"]->changeSelectedTexture();
+    APPLICATION_STATE=HAND;
 }
 
 }
 void Application::mouseReleased(float x, float y) {
-
-
-
+    if (temp) {
+    switch (APPLICATION_STATE) {
+            case MOUSE:
+                return;
+            case SELECT_RECTANGLE:
+            pages[activePage]->addShape(temp);
+            temp= nullptr;
+            break;
+            case SELECT_CIRCLE:
+            pages[activePage]->addShape(temp);
+            temp= nullptr;
+            break;
+            case SELECT_TRIANGLE:
+                break;
+            case SELECT_LINE:
+                temp = new sf::RectangleShape();
+            temp->setPosition({x, y});
+            temp->setFillColor({0, 0, 0});
+            break;
+            default:
+                break;
+        }
+    }
 
 
 }
@@ -455,30 +520,71 @@ void Application::addUpperBar() {
     actionButtons.push_back(button);
 }
 void Application::mouseHighlight(float x, float y) {
+if(programElements["CURSOR"]->isSelected()) {
+    if (x > itemWidth - 10 && x < itemWidth + 10 && y > upperBarHeight + 10)//this means resize horizontaly
+    {
+        APPLICATION_STATE = RESIZE_HORIZONTAL;
+        cursorImage->setTexture(textureGroup["RESIZE_HORIZONTAL"]);
 
-if(x>itemWidth-10&&x<itemWidth+10 &&y>upperBarHeight+10)//this means resize horizontaly
-{
-    APPLICATION_STATE=RESIZE_HORIZONTAL;
-    cursorImage->setTexture(textureGroup["RESIZE_HORIZONTAL"]);
+    } else if (y > upperBarHeight - 10 && y < upperBarHeight + 10 && x > itemWidth) {
+        APPLICATION_STATE = RESIZE_VERTICAL;
+        cursorImage->setTexture(textureGroup["RESIZE_VERTICAL"]);
+    } else {
+        APPLICATION_STATE = MOUSE;
+        cursorImage->setTexture(textureGroup["CURSOR"]);
+    }
 
 }
-else if(y>upperBarHeight-10&&y<upperBarHeight+10 && x>itemWidth)
+else if( x < itemWidth || y < upperBarHeight)
 {
-    APPLICATION_STATE=RESIZE_VERTICAL;
-    cursorImage->setTexture(textureGroup["RESIZE_VERTICAL"]);
-}
-else{
-    APPLICATION_STATE=MOUSE;
     cursorImage->setTexture(textureGroup["CURSOR"]);
+
 }
-
-
+else if(programElements["RECTANGLE"]->isSelected()||programElements["CIRCLE"]->isSelected()||programElements["TRIANGLE"]->isSelected()
+||programElements["LINE"]->isSelected()){
+    cursorImage->setTexture(textureGroup["DOT"]);
+}
+else if(programElements["HAND"]->isSelected())
+{
+    cursorImage->setTexture(textureGroup["HAND"]);
+}
+if(temp) {
+    switch (APPLICATION_STATE) {
+        case MOUSE:
+            return;
+        case SELECT_RECTANGLE: {
+            auto *rec = static_cast<sf::RectangleShape *>(temp);
+            rec->setSize({x - rec->getPosition().x, y - rec->getPosition().y});
+            break;
+        }
+        case SELECT_CIRCLE: {
+            std::cout<<"HELLO";
+            auto *circle = static_cast<sf::CircleShape *>(temp);
+            float radius=sqrt(pow(x-circle->getPosition().x,2)+pow(y-circle->getPosition().y,2));
+            circle->setRadius(radius);
+            break;
+        }
+        case SELECT_TRIANGLE:
+            break;
+        case SELECT_LINE:
+            break;
+        default:
+            break;
+    }
+}
 }
 void Application::loadSprites() {
     cursorImage=new sf::RectangleShape();
     cursorImage->setSize({40,40});
     cursorImage->setTexture(textureGroup["CURSOR"]);
     window->setMouseCursorVisible(false);
+}
+bool Application::onPageBound(int x, int y) {
+    if(x>itemWidth && y>upperBarHeight)
+    {
+        return true;
+    }
+        return false;
 }
 
 

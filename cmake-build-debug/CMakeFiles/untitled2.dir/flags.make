@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR 
+CXX_INCLUDES = -I/home/ahmed/CLionProjects/untitled2/SFML_INCLUDE_DIR -I/home/ahmed/CLionProjects/untitled2/. -I/home/ahmed/CLionProjects/untitled2/Figures 
 

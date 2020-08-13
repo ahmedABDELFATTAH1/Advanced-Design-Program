@@ -11,7 +11,7 @@
 #include"Element.h"
 #include <random>
 enum states{
-    MOUSE,SELECT_SHAPE,RESIZE_HORIZONTAL,RESIZE_VERTICAL
+    MOUSE,SELECT_LINE,SELECT_TRIANGLE,SELECT_CIRCLE,SELECT_RECTANGLE,HAND,RESIZE_HORIZONTAL,RESIZE_VERTICAL
 };
 class Application {
 private:
@@ -29,6 +29,7 @@ private:
     int itemWidth;
     int itemHeight;
     int upperBarHeight=50;
+    sf::Shape * temp;
     sf::RenderWindow* window;
     int numPages;
     void addLeftBar();
@@ -43,6 +44,7 @@ private:
     void addPageButton();
     void mouseHighlight(float x,float y);
     void loadSprites();
+    bool onPageBound(int x,int y);
     void moveUpperBar();
 public:
     Application(sf::RenderWindow&);
