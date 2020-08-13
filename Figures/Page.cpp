@@ -36,10 +36,13 @@ bool Page::setSelectedShape(int x, int y) {
     {
         if(shapes[i]->getGlobalBounds().contains(x,y))
         {
+
+            unSelect();
             selectedShape=shapes[i];
             selectedColor.r=selectedShape->getOutlineColor().r;
             selectedColor.g=selectedShape->getOutlineColor().g;
             selectedColor.b=selectedShape->getOutlineColor().b;
+            selectedShape->setOutlineColor({255,0,0});
             return true;
         }
     }
@@ -53,13 +56,19 @@ sf::Shape *Page::getSelectedShape() {
 void Page::deleteSelectedShape() {
     auto itr=shapes.begin();
     for(;*itr!=selectedShape;itr++);
-    shapes.erase(itr);
     delete *itr;
+    shapes.erase(itr);
 }
 
 void Page::unSelect() {
-selectedShape->setOutlineColor({selectedColor.r,selectedColor.g,selectedColor.b});
-selectedShape= nullptr;
+    if(selectedShape) {
+        selectedShape->setOutlineColor({selectedColor.r, selectedColor.g, selectedColor.b});
+        selectedShape = nullptr;
+    }
+}
+
+void Page::moveSelectedShape(int x, int y) {
+selectedShape->setPosition(x,y);
 }
 
 

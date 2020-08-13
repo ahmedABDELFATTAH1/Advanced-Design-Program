@@ -21,7 +21,7 @@ bool setSelectedShape(int x,int y);
 sf::Shape* getSelectedShape();
 void deleteSelectedShape();
 void unSelect();
-
+void moveSelectedShape(int x, int y);
 ~Page();
 };
 

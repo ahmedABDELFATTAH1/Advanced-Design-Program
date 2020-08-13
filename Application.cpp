@@ -4,6 +4,7 @@ Application::Application(sf::RenderWindow& wind) {
     APPLICATION_STATE=MOUSE;
     temp= nullptr;
     this->window=&wind;
+    moveItem= false;
     itemWidth=window->getSize().x/6;
     itemHeight=50;
     numPages=1;
@@ -44,6 +45,7 @@ void Application::drawPagesLabels() {
     programElements["CURSOR"]->drawButton(window);
     programElements["HAND"]->drawButton(window);
     programElements["LINE"]->drawButton(window);
+    programElements["ERASE"]->drawButton(window);
     window->draw(*cursorImage);
     if(temp)
     window->draw(*temp);
@@ -160,6 +162,15 @@ texture=new sf::Texture;
 texture->loadFromFile("assets/rectangle_selected.png");
 textureGroup["RECTANGLE_SELECTED"]=texture;
 
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/erase.png");
+textureGroup["ERASE"]=texture;
+
+texture=new sf::Texture;
+texture->loadFromFile("assets/erase_selected.png");
+textureGroup["ERASE_SELECTED"]=texture;
+
 texture=new sf::Texture;
 texture->loadFromFile("assets/triangle.png");
 textureGroup["TRIANGLE"]=texture;
@@ -258,15 +269,24 @@ void Application::mousePressed(float x, float y) {
         switch (APPLICATION_STATE) {
             case MOUSE:
                 return;
+            case SELECT_ERASE:
+            {
+                if(pages[activePage]->setSelectedShape(x,y))
+                {
+                    pages[activePage]->deleteSelectedShape();
+                }
+                break;
+            }
             case HAND:
             {
                 if(pages[activePage]->setSelectedShape(x,y))
                 {
-                    auto* shape=pages[activePage]->getSelectedShape();
-
-
+                    moveItem=true;
                 }
+                else{
 
+                    pages[activePage]->unSelect();
+                }
             }
             case SELECT_RECTANGLE:
                 temp=new sf::RectangleShape();
@@ -291,7 +311,8 @@ void Application::mousePressed(float x, float y) {
             case SELECT_LINE:
                 temp=new sf::RectangleShape();
                 temp->setPosition({x,y});
-                temp->setFillColor({0,0,0});
+                temp->setOutlineColor({0,0,0});
+                temp->setOutlineThickness(5);
                 break;
             default:
                 break;
@@ -390,6 +411,21 @@ else if(programElements["CIRCLE"]->oNSelected({int(x), int(y)}))
         programElements["LINE"]->changeSelectedTexture();
         APPLICATION_STATE=SELECT_LINE;
     }
+    else if(programElements["ERASE"]->oNSelected({int(x), int(y)}))
+    {
+
+        for(int i=0;i<actionButtons.size();i++)
+        {
+            if(actionButtons[i]->isSelected())
+            {
+                actionButtons[i]->toggleSelected();
+                actionButtons[i]->changeSelectedTexture();
+            }
+        }
+        programElements["ERASE"]->toggleSelected();
+        programElements["ERASE"]->changeSelectedTexture();
+        APPLICATION_STATE=SELECT_ERASE;
+    }
 else if(programElements["CURSOR"]->oNSelected({int(x), int(y)})) {
         for(int i=0;i<actionButtons.size();i++)
         {
@@ -420,6 +456,7 @@ else if(programElements["HAND"]->oNSelected({int(x), int(y)}))
 
 }
 void Application::mouseReleased(float x, float y) {
+    moveItem= false;
     if (temp) {
     switch (APPLICATION_STATE) {
             case MOUSE:
@@ -534,6 +571,17 @@ void Application::addUpperBar() {
     button->setTextures(textureGroup["HAND_SELECTED"]);
     programElements["HAND"]=button;
     actionButtons.push_back(button);
+
+    positionX+=(width+20);
+    text= nullptr;
+    rec=new sf::RectangleShape();
+    rec->setPosition(positionX,positionY);
+    rec->setSize({(float)width,(float)upperBarHeight});
+    rec->setTexture(textureGroup["ERASE"]);
+    button=new Element(rec, text, "ERASE");
+    button->setTextures(textureGroup["ERASE_SELECTED"]);
+    programElements["ERASE"]=button;
+    actionButtons.push_back(button);
 }
 void Application::mouseHighlight(float x, float y) {
 if(programElements["CURSOR"]->isSelected()) {
@@ -564,12 +612,23 @@ else if(programElements["HAND"]->isSelected())
 {
     cursorImage->setTexture(textureGroup["HAND"]);
 }
+else if(programElements["ERASE"]->isSelected())
+{
+    cursorImage->setTexture(textureGroup["ERASE"]);
+}
 if(temp) {
     if(x<itemWidth)
         x=itemWidth+5;
     if(y<upperBarHeight)
         y=upperBarHeight+5;
     switch (APPLICATION_STATE) {
+        case HAND: {
+            if(moveItem)
+            {
+                pages[activePage]->moveSelectedShape(x,y);
+            }
+            break;
+        }
         case MOUSE:
             return;
         case SELECT_RECTANGLE: {

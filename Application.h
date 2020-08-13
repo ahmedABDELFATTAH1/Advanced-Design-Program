@@ -11,7 +11,7 @@
 #include"Element.h"
 #include <random>
 enum states{
-    MOUSE,SELECT_LINE,SELECT_TRIANGLE,SELECT_CIRCLE,SELECT_RECTANGLE,HAND,RESIZE_HORIZONTAL,RESIZE_VERTICAL
+    MOUSE,SELECT_LINE,SELECT_TRIANGLE,SELECT_CIRCLE,SELECT_RECTANGLE,SELECT_ERASE,HAND,RESIZE_HORIZONTAL,RESIZE_VERTICAL
 };
 class Application {
 private:
@@ -23,6 +23,7 @@ private:
     std::unordered_map<std::string,sf::Font*> fonts;
     sf::RectangleShape* cursorImage;
     int APPLICATION_STATE;
+    bool moveItem;
     std::string activePage;
     const std::string buildString="Page";
     sf::Event event;
