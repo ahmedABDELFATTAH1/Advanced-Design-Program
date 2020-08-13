@@ -258,6 +258,16 @@ void Application::mousePressed(float x, float y) {
         switch (APPLICATION_STATE) {
             case MOUSE:
                 return;
+            case HAND:
+            {
+                if(pages[activePage]->setSelectedShape(x,y))
+                {
+                    auto* shape=pages[activePage]->getSelectedShape();
+
+
+                }
+
+            }
             case SELECT_RECTANGLE:
                 temp=new sf::RectangleShape();
                 temp->setPosition({x,y});
@@ -272,6 +282,11 @@ void Application::mousePressed(float x, float y) {
                 static_cast<sf::CircleShape*>(temp)->setPointCount(200);
                 break;
             case SELECT_TRIANGLE:
+                temp=new sf::CircleShape();
+                temp->setPosition({x,y});
+                temp->setOutlineColor({0,0,0});
+                temp->setOutlineThickness(5);
+                static_cast<sf::CircleShape*>(temp)->setPointCount(3);
                 break;
             case SELECT_LINE:
                 temp=new sf::RectangleShape();
@@ -418,11 +433,12 @@ void Application::mouseReleased(float x, float y) {
             temp= nullptr;
             break;
             case SELECT_TRIANGLE:
-                break;
+            pages[activePage]->addShape(temp);
+            temp= nullptr;
+            break;
             case SELECT_LINE:
-                temp = new sf::RectangleShape();
-            temp->setPosition({x, y});
-            temp->setFillColor({0, 0, 0});
+            pages[activePage]->addShape(temp);
+            temp= nullptr;
             break;
             default:
                 break;
@@ -549,6 +565,10 @@ else if(programElements["HAND"]->isSelected())
     cursorImage->setTexture(textureGroup["HAND"]);
 }
 if(temp) {
+    if(x<itemWidth)
+        x=itemWidth+5;
+    if(y<upperBarHeight)
+        y=upperBarHeight+5;
     switch (APPLICATION_STATE) {
         case MOUSE:
             return;
@@ -564,10 +584,19 @@ if(temp) {
             circle->setRadius(radius);
             break;
         }
-        case SELECT_TRIANGLE:
+        case SELECT_TRIANGLE: {
+            auto *tri = static_cast<sf::CircleShape *>(temp);
+            float radius = sqrt(pow(x - tri->getPosition().x, 2) + pow(y - tri->getPosition().y, 2));
+            tri->setRadius(radius);
             break;
-        case SELECT_LINE:
+        }
+        case SELECT_LINE: {
+            auto *rec = static_cast<sf::RectangleShape *>(temp);
+            float angle=atan2(y-rec->getPosition().y,x-rec->getPosition().x);
+            rec->setSize({float(sqrt(pow(x-rec->getPosition().x,2)+pow(y-rec->getPosition().y,2))), 5});
+            rec->setRotation(angle*180/M_PI);
             break;
+        }
         default:
             break;
     }

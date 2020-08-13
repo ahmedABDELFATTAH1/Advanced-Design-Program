@@ -26,7 +26,6 @@ int main()
       application.draw();
       window.display();
       auto hello=clock.getElapsedTime();
-       // std::cout<<1/hello.asSeconds()<<std::endl;
     }
 
 
